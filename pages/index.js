@@ -1,5 +1,21 @@
-import { Home } from "../components";
+import {
+  Header,
+  Aboutme,
+  Experience,
+  Features,
+  Projects,
+  Contactme,
+} from "../compons";
 
-export default function Root() {
-  return <Home />;
+export default function IndexPage() {
+  return (
+    <section>
+      <Header />
+      <Aboutme />
+      <Experience />
+      <Features />
+      <Projects />
+      <Contactme />
+    </section>
+  );
 }

@@ -1,44 +1,52 @@
-import Link from "next/link";
+import Image from "next/image";
+import styled from "styled-components";
+import { navmenus, profile } from "../configs";
 
-const navStyles = {
-  container: {
-    width: "100%",
-    backgroundColor: "#000000",
-  },
-  wrapper: {
-    width: "1200px",
-    margin: "0 auto",
-    display: "flex",
-    alignItems: "center",
-  },
-  items: {
-    color: "#ffffff",
-    padding: "15px 20px",
-  },
-};
+const StyledNavbar = styled.nav`
+  width: 80%;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .left-content {
+    flex-basis: 44%;
+  }
+  .right-content {
+    flex-basis: 48%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+`;
 
-const Navbar = () => {
+export default function Navbar() {
+  console.log("data", navmenus, profile);
+
   return (
-    <div style={navStyles.container}>
-      <ul style={navStyles.wrapper}>
-        <li style={navStyles.items}>
-          <Link href="/">Home</Link>
-        </li>
+    <StyledNavbar>
+      <div className="left-content">
+        <Image
+          src="/icons/logo.png"
+          width={40}
+          height={40}
+          quality={80}
+          alt="logo-img"
+          priority
+        />
+      </div>
 
-        <li style={navStyles.items}>
-          <Link href="/about">About</Link>
-        </li>
-
-        <li style={navStyles.items}>
-          <Link href="/contact">Contact</Link>
-        </li>
-
-        <li style={navStyles.items}>
-          <Link href="/article">Articles</Link>
-        </li>
-      </ul>
-    </div>
+      <ol className="right-content">
+        {navmenus &&
+          navmenus.map(({ menuName }, index) => (
+            <li key={index}>{menuName}</li>
+          ))}
+          <li>
+            <button type="button">
+              resume
+            </button>
+          </li>
+      </ol>
+    </StyledNavbar>
   );
-};
-
-export default Navbar;
+}

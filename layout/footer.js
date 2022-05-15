@@ -1,9 +1,6 @@
-const Footer = () => {
-  return (
-    <div style={{ textAlign: "center" }}>
-      <p>&copy;Copy right 2022 | developed in - Next.js</p>
-    </div>
-  );
-};
+import Image from "next/image";
+import styled from "styled-components";
 
-export default Footer;
+export default function Footer() {
+  return <section>This is footer section</section>;
+}

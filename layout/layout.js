@@ -1,15 +1,12 @@
-import { Meta, Navbar, Header, Footer } from "../layout";
+import { Sitemeta, Navbar, Footer } from "../layout";
 
-const Layout = ({ children }) => {
+export default function Layout({ children }) {
   return (
     <>
-      <Meta />
+      <Sitemeta />
       <Navbar />
-      <Header />
-      <main style={{ width: "1200px", margin: "0 auto" }}>{children}</main>
+      <main id="content">{children}</main>
       <Footer />
     </>
   );
-};
-
-export default Layout;
+}
