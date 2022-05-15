@@ -1,4 +1,5 @@
 export { default as navmenus } from "./navmenus";
+export { default as socials } from "./socials";
 export { default as profile } from "./profile";
 export { default as experience } from "./experience";
 export { default as features } from "./features";

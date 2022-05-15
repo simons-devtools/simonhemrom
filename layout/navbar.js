@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import { navmenus } from "../configs";
 import styled from "styled-components";
-import { navmenus, profile } from "../configs";
 
 const StyledNavbar = styled.nav`
   width: 100%;
@@ -70,7 +70,7 @@ const StyledNavbar = styled.nav`
 `;
 
 export default function Navbar() {
-  console.log("data", navmenus, profile);
+  // console.log("data", navmenus, profile);
 
   return (
     <StyledNavbar>
