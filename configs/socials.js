@@ -1,19 +1,19 @@
 const socials = [
   {
     name: "GitHub",
-    url: "https://github.com/devsimonhem",
+    url: "https://github.com/simonsinfo",
   },
   {
     name: "Instagram",
-    url: "https://www.instagram.com/spsimon52",
+    url: "https://www.instagram.com/simonsinfoo",
   },
   {
     name: "Twitter",
-    url: "https://twitter.com/devsimonhem",
+    url: "https://twitter.com/simonsinfoo",
   },
   {
     name: "Linkedin",
-    url: "https://www.linkedin.com/in/devsimonhem",
+    url: "https://www.linkedin.com/in/simonsinfoo",
   },
   {
     name: "Codepen",
