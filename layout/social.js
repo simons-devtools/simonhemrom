@@ -1,16 +1,17 @@
 import Link from "next/link";
+import { Icon } from "../configs/icons";
 import { socials } from "../configs";
 import styled from "styled-components";
-import { Icon } from "../configs/icons";
 
 const StyledSocial = styled.div`
   position: fixed;
-  bottom: -2%;
+  bottom: -3%;
   text-align: center;
   &::after {
     content: "";
     width: 2.5px;
     height: 90px;
+    margin-left: 15px;
     display: inline-block;
     background: var(--light-slate);
   }
@@ -18,7 +19,7 @@ const StyledSocial = styled.div`
     display: block;
     width: 20px;
     height: 20px;
-    margin-bottom: 30px;
+    margin: 0px 0px 30px 15px;
     &:hover {
       transform: var(--translateY);
       transition: var(--transition);
