@@ -1,3 +1,9 @@
+import styled from "styled-components";
+
 export default function Projects() {
-  return <section>This is projects section</section>;
+  return (
+    <section id="projects-section">
+      <h4>This is projects section</h4>
+    </section>
+  );
 }

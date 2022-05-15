@@ -1,3 +1,9 @@
+import styled from "styled-components";
+
 export default function Header() {
-  return <section>This is header section</section>;
+  return (
+    <section id="header-section">
+      <h4>This is header section</h4>
+    </section>
+  );
 }
