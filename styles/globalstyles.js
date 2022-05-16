@@ -38,42 +38,41 @@ const Globalstyles = createGlobalStyle`
     border-radius: 10px;
   }
   body {
-    margin: 0;
-    width: 100%;
-    min-height: 100%;
+    margin: 0px 0px;
+    line-height: 1.6;
     overflow-x: hidden;
     color: var(--slate);
     background: var(--navy);
-    line-height: 1.6;
     font-size: var(--fz-md);
     font-family: var(--font-sans);
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
     ${({ theme }) => theme.mixins.fadeInAll}
     &.hidden {
       overflow: hidden;
     }
     @media screen and (max-width: 768px) {
       &.blur {
-      overflow: hidden;
-      #content > * {
-        filter: blur(5px) brightness(0.8);
-        transition: var(--transition);
-        pointer-events: none;
-        user-select: none;
+        overflow: hidden;
+        #content > * {
+          filter: blur(5px) brightness(0.8);
+          transition: var(--transition);
+          pointer-events: none;
+          user-select: none;
+        }
       }
     }
-    }
   }
-  section {
-    max-width: 1000px;
-    margin: 0px auto;
-    padding: 100px 0;
-    @media (max-width: 768px) {
-      padding: 80px 0px;
-    }
-    @media (max-width: 480px) {
-      padding: 60px 0px;
+  main {
+    padding: 0px 148px;
+    section {
+      /* width: 1000px;
+      margin: 0px auto;
+      padding: 100px 0px; */
+      @media (max-width: 768px) {
+        padding: 80px 0px;
+      }
+      @media (max-width: 480px) {
+        padding: 60px 0px;
+      }
     }
   }
   h1,
@@ -98,7 +97,7 @@ const Globalstyles = createGlobalStyle`
     }
   }
   .medium-heading {
-    margin: 0;
+    margin: 0 0;
     font-size: clamp(40px, 8vw, 60px);
   }
   .numbered-heading {
@@ -149,10 +148,10 @@ const Globalstyles = createGlobalStyle`
     max-width: 100%;
     vertical-align: middle;
   }
-  /* img[alt=""],
+  img[alt=""],
   img:not([alt]) {
     filter: blur(5px);
-  } */
+  }
   #logo {
     color: var(--green);
   }

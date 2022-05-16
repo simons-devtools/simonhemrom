@@ -50,7 +50,7 @@ const mixins = {
     display: inline-block;
     text-decoration: none;
     text-decoration-skip-ink: auto;
-    color: var(--light-slate);
+    color: var(--lightest-slate);
     position: relative;
     transition: var(--transition);
     &:hover,
@@ -68,6 +68,7 @@ const mixins = {
     position: relative;
     transition: var(--transition);
     color: var(--green);
+    margin: 0px 5px;
     &:hover,
     &:focus,
     &:active {

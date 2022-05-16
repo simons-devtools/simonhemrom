@@ -4,9 +4,9 @@ import styled from "styled-components";
 
 const StyledEmail = styled.div`
   position: fixed;
-  right: 1.5%;
-  bottom: 3%;
-  letter-spacing: 3px;
+  right: 0%;
+  bottom: 2%;
+  letter-spacing: 2px;
   font-size: var(--fz-xs);
   color: var(--lightest-slate);
   transform: translate(100px, -140px) rotate(90deg);
@@ -19,6 +19,7 @@ const StyledEmail = styled.div`
     background: var(--light-slate);
   }
   a {
+    font-size: var(--fz-xxs);
     color: var(--lightest-slate);
     &:hover {
       transform: var(--translateX);
