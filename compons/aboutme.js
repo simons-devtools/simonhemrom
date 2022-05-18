@@ -54,6 +54,7 @@ const StyledHeader = styled.section`
       &:hover {
         cursor: grabbing;
         &::after {
+          border-color: var(--slate);
           transition: var(--transition);
           transform: translate(-0px, -0px);
         }

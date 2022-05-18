@@ -5,6 +5,8 @@ const profile = {
   email: "simonhemrom@hotmail.com",
   position: "Web Developer",
   description: "I'm a mern full full stack web developer...!!",
+  resume:
+    "https://drive.google.com/file/d/1KQ4j09aVzNMBI43rl2ueOpMwht8GQZEs/view?usp=sharing",
 };
 
 export default profile;
