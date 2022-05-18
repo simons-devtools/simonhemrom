@@ -2,9 +2,9 @@ import { profile } from "../configs";
 import styled from "styled-components";
 
 const StyledContact = styled.section`
-  width: 515px;
-  margin: 100px auto;
-  padding: 100px 0px;
+  width: 1000px;
+  margin: 80px auto;
+  padding: 80px 250px;
   text-align: center;
   .contact-heading {
     .heading-one {
