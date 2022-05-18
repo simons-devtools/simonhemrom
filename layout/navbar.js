@@ -7,7 +7,7 @@ const StyledNavbar = styled.nav`
   position: fixed;
   top: 0px;
   left: 0px;
-  z-index: 10;
+  z-index: 1000;
   width: 100%;
   height: 100px;
   padding: 0px 50px;

@@ -8,7 +8,7 @@ const StyledProjects = styled.section`
 
 export default function Projects() {
   return (
-    <StyledProjects id="projects-section">
+    <StyledProjects>
       <h2 className="small-heading">Other Noteworthy Projects</h2>
       <div className="">
         <h4>This is projects section</h4>

@@ -8,8 +8,8 @@ const StyledFeatures = styled.section`
 
 export default function Features() {
   return (
-    <StyledFeatures id="features-section">
-      <h2 className="numbered-heading">Features Projects</h2>
+    <StyledFeatures id="projects-section">
+      <h2 className="numbered-heading">Featured Projects</h2>
       <div className="">
         <h4>This is features section</h4>
       </div>
