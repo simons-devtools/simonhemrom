@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { profile } from "../configs";
 import styled from "styled-components";
 
@@ -33,13 +32,9 @@ const StyledEmail = styled.div`
 `;
 
 export default function Email() {
-  const { email } = profile;
-
   return (
     <StyledEmail>
-      <Link href={`mailto:${email}`}>
-        <a className="">{email}</a>
-      </Link>
+      <a href={`mailto:${profile.email}`}>{profile.email}</a>
     </StyledEmail>
   );
 }

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styled from "styled-components";
 
 const StyledHeader = styled.section`
@@ -36,17 +35,26 @@ export default function Header() {
             I’m a software developer specializing in building (and occasionally
             designing) exceptional digital experiences. Currently, I’m focused
             on building accessible, human-centered products at
-            <Link href="/" target="_blank" passHref>
-              <a>Upstatement</a>
-            </Link>
+            <a
+              href="https://google.com"
+              target="_blank"
+              rel="noopenner noreferrer"
+            >
+              Upstatement
+            </a>
             .
           </p>
         </div>
 
         <div className="checkout">
-          <Link href="/" target="_blank" passHref>
-            <a className="button">Check out my course!</a>
-          </Link>
+          <a
+            href="https://google.com"
+            target="_blank"
+            rel="noopenner noreferrer"
+            className="button"
+          >
+            Check out my course!
+          </a>
         </div>
       </div>
     </StyledHeader>

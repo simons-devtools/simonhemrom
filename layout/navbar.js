@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { navmenus } from "../configs";
 import styled from "styled-components";
@@ -32,9 +31,6 @@ const StyledNavbar = styled.nav`
           letter-spacing: 2px;
           font-size: var(--fz-xxs);
           counter-increment: item 1;
-          a {
-            ${({ theme }) => theme.mixins.link}
-          }
           &::before {
             content: "0" counter(item) ".";
             display: inline-block;
@@ -94,7 +90,7 @@ export default function Navbar() {
   };
 
   return (
-    <StyledNavbar id="navbar">
+    <StyledNavbar id="navbar" openMenu={false}>
       <div className="navbar-content">
         <div className="left-content">
           <Image
@@ -112,15 +108,18 @@ export default function Navbar() {
             {navmenus &&
               navmenus.map(({ menuName, menuId }, index) => (
                 <li key={index}>
-                  <Link href={menuId}>
-                    <a>{menuName}</a>
-                  </Link>
+                  <a href={menuId}>{menuName}</a>
                 </li>
               ))}
           </ul>
-          <Link href="/">
-            <a className="resume-btn">Resume</a>
-          </Link>
+          <a
+            href="https://google.com"
+            target="_blank"
+            rel="noopenner noreferrer"
+            className="resume-btn"
+          >
+            Resume
+          </a>
         </div>
       </div>
     </StyledNavbar>

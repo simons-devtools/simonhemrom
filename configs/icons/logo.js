@@ -1,7 +1,7 @@
 import React from 'react';
 
 const IconLogo = () => (
-    <svg id="logo" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 -120 500 500">
+    <svg id="logo" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="-370 -470 1200 1200">
         <title>Logo</title>
         <polygon points="118 253,137 193,4 254" style={{ fill: '#64ffda' }}>
         </polygon>

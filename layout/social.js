@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { socials } from "../configs";
 import styled from "styled-components";
 import { Icon } from "../configs/icons";
@@ -38,11 +37,16 @@ export default function Social() {
     <StyledSocial>
       {socials &&
         socials.map(({ name, url }, index) => (
-          <Link href={url} key={index} target="_blank">
-            <a className="social-icon" aria-label={name}>
-              <Icon name={name} />
-            </a>
-          </Link>
+          <a
+            key={index}
+            href={url}
+            target="_blank"
+            rel="noopenner noreferrer"
+            className="social-icon"
+            aria-label={name}
+          >
+            <Icon name={name} />
+          </a>
         ))}
     </StyledSocial>
   );
