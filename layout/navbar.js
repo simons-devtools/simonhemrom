@@ -113,7 +113,7 @@ export default function Navbar() {
               ))}
           </ul>
           <a
-            href="https://google.com"
+            href="https://drive.google.com/file/d/1KQ4j09aVzNMBI43rl2ueOpMwht8GQZEs/view?usp=sharing"
             target="_blank"
             rel="noopenner noreferrer"
             className="resume-btn"

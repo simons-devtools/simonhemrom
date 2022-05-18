@@ -3,7 +3,7 @@ import styled from "styled-components";
 const StyledHeader = styled.section`
   width: 1000px;
   margin: 0px auto;
-  padding: 148px 0px;
+  padding: 100px 0px;
 `;
 
 export default function Aboutme() {
