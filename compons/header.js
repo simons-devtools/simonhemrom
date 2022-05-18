@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledHeader = styled.section`
+const StyledHeader = styled.header`
   width: 1000px;
   margin: 0px auto;
   padding: 160px 0px 80px 0px;
