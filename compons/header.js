@@ -53,7 +53,7 @@ export default function Header() {
             rel="noopenner noreferrer"
             className="button"
           >
-            Check out my course!
+            Contact me for hire!
           </a>
         </div>
       </div>

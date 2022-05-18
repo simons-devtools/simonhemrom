@@ -4,8 +4,8 @@ const navmenus = [
     menuId: "#about-section",
   },
   {
-    menuName: "Experience",
-    menuId: "#experience-section",
+    menuName: "Experiences",
+    menuId: "#experiences-section",
   },
   {
     menuName: "Projects",

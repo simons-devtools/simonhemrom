@@ -9,6 +9,7 @@ const StyledHeader = styled.section`
 export default function Aboutme() {
   return (
     <StyledHeader id="about-section">
+      <h2 className="numbered-heading">About Me</h2>
       <div className="">
         <h4>This is about section</h4>
       </div>

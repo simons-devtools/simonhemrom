@@ -1,7 +1,7 @@
 import {
   Header,
   Aboutme,
-  Experience,
+  Experiences,
   Features,
   Projects,
   Contactme,
@@ -12,7 +12,7 @@ export default function IndexPage() {
     <section>
       <Header />
       <Aboutme />
-      <Experience />
+      <Experiences />
       <Features />
       <Projects />
       <Contactme />
