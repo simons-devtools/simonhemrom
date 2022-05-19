@@ -43,7 +43,7 @@ const StyledHeader = styled.section`
         content: "";
         width: 100%;
         height: 100%;
-        border: 2px solid var(--green);
+        border: 1px solid var(--green);
         transform: translate(10px, 10px);
       }
       .image {
@@ -55,7 +55,7 @@ const StyledHeader = styled.section`
         cursor: grabbing;
         &::before {
           background: transparent;
-          border: 2px solid var(--slate);
+          border: 1px solid var(--slate);
           transition: var(--transition);
           transform: translate(10px, 10px);
         }
@@ -66,6 +66,7 @@ const StyledHeader = styled.section`
         }
         .image {
           filter: blur(0px);
+          transition: var(--transition);
         }
       }
     }
