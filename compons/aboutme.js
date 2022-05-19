@@ -34,7 +34,7 @@ const StyledHeader = styled.section`
         content: "";
         width: 100%;
         height: 100%;
-        background: var(--green);
+        background: var(--slate);
       }
       &::after {
         display: block;
@@ -53,14 +53,19 @@ const StyledHeader = styled.section`
       }
       &:hover {
         cursor: grabbing;
+        &::before {
+          background: transparent;
+          border: 2px solid var(--slate);
+          transition: var(--transition);
+          transform: translate(10px, 10px);
+        }
         &::after {
-          border-color: var(--slate);
+          border-color: var(--green);
           transition: var(--transition);
           transform: translate(-0px, -0px);
         }
         .image {
           filter: blur(0px);
-          transition: var(--transition);
         }
       }
     }
@@ -115,7 +120,7 @@ export default function Aboutme() {
 
         <div className="right-content">
           <Image
-            src="/images/profile.png"
+            src="/icons/profile.png"
             width={300}
             height={300}
             quality={90}

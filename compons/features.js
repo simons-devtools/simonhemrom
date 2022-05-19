@@ -1,3 +1,4 @@
+import { features } from "../configs";
 import styled from "styled-components";
 
 const StyledFeatures = styled.section`
@@ -7,6 +8,8 @@ const StyledFeatures = styled.section`
 `;
 
 export default function Features() {
+  console.log("data", features);
+
   return (
     <StyledFeatures id="projects-section">
       <h2 className="numbered-heading">Featured Projects</h2>
