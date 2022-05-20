@@ -10,7 +10,7 @@ const features = [
     technologies: [
       { id: 1, tech: "API" },
       { id: 2, tech: "Netlify" },
-      { id: 3, tech: "Node.js" },
+      { id: 3, tech: "Node" },
       { id: 4, tech: "Express" },
       { id: 5, tech: "React" },
     ],
@@ -30,10 +30,10 @@ const features = [
     website: "https://childcarebd.herokuapp.com",
     role: "Featured Project",
     article:
-      "This website can only be used for private business. You can also show some of your personal data here. Share portfolios, blogs and small business offers.",
+      "Improve your GitHub profile and repository statistics with your top programming language and e-commerce site data visualization. Sort by the shape of their data through your top customers.",
     technologies: [
-      { id: 1, tech: "Heroku" },
-      { id: 2, tech: "React" },
+      { id: 1, tech: "React" },
+      { id: 2, tech: "Heroku" },
       { id: 3, tech: "Express" },
       { id: 4, tech: "API" },
       { id: 5, tech: "Node" },
@@ -59,7 +59,7 @@ const features = [
       { id: 1, tech: "API" },
       { id: 2, tech: "Express" },
       { id: 3, tech: "Heroku" },
-      { id: 4, tech: "Node.js" },
+      { id: 4, tech: "Node" },
       { id: 5, tech: "React" },
     ],
     links: [

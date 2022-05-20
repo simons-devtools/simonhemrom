@@ -62,7 +62,6 @@ const StyledFeatures = styled.section`
         }
         .theme-technologies {
           display: flex;
-          margin: 15px 0px;
           li {
             color: inherit !important;
           }
@@ -156,8 +155,8 @@ export default function Features() {
                           style={{
                             margin: `${
                               index === 1
-                                ? "20px 20px 20px 0px"
-                                : "20px 0px 20px 20px"
+                                ? "15px 20px 15px 0px"
+                                : "15px 0px 15px 20px"
                             }`,
                           }}
                         >
@@ -176,8 +175,8 @@ export default function Features() {
                           style={{
                             margin: `${
                               index === 1
-                                ? "0px 30px 0px 0px"
-                                : "0px 0px 0px 30px"
+                                ? "0px 34px 0px 0px"
+                                : "0px 0px 0px 34px"
                             }`,
                           }}
                         >
