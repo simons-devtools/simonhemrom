@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 const StyledEmail = styled.div`
   position: fixed;
-  right: 0%;
-  bottom: 2%;
+  right: 0px;
+  bottom: 10px;
   letter-spacing: 2px;
   font-size: var(--fz-xs);
   color: var(--lightest-slate);

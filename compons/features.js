@@ -10,11 +10,8 @@ const StyledFeatures = styled.section`
   .features-container {
     .features-wrapper {
       display: flex;
-      /* flex-direction: ${(props) => (props.id === 2 ? "row-reverse" : "row")}; */
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 100px;
-      /* margin: ${(props) => props.id === 2 && "100px 0px"}; */
       .feature-image {
         position: relative;
         width: 565px;
@@ -43,7 +40,6 @@ const StyledFeatures = styled.section`
         position: relative;
         width: 435px;
         height: 320px;
-        /* text-align: ${(props) => (props.id === 2 ? "left" : "right")}; */
         .theme-detail {
           .featured-one {
             color: var(--green);
@@ -60,37 +56,22 @@ const StyledFeatures = styled.section`
           }
           .featured-three {
             padding: 25px 25px;
-            margin-top: 0px;
-            margin-bottom: 0px;
-            /*  margin-left: ${(props) => (props.id !== 2 ? "-60px" : "0px")}; */
-            /* margin-right: ${(props) => (props.id === 2 ? "-60px" : "0px")}; */
             background: var(--light-navy);
             border-radius: var(--border-radius);
           }
         }
         .theme-technologies {
-          margin: 15px 0px;
           display: flex;
-          flex-direction: row;
-          /* justify-content: ${(props) =>
-            props.id === 2 ? "flex-start" : "flex-end"}; */
+          margin: 15px 0px;
           li {
             color: inherit !important;
-            margin-left: 30px;
-            /* padding: ${(props) =>
-              props.id === 2 ? "20px 20px 20px 0px" : "20px 0px 20px 20px"}; */
           }
         }
         .theme-source {
           display: flex;
-          /* justify-content: ${(props) =>
-            props.id === 2 ? "flex-start" : "flex-end"}; */
           li {
             width: 22px;
             height: 22px;
-            margin-left: 30px;
-            /* margin: ${(props) =>
-              props.id === 2 ? "0px 30px 0px 0px" : "0px 0px 0px 30px"}; */
             &:hover {
               cursor: pointer;
               color: var(--green);
@@ -112,17 +93,18 @@ export default function Features() {
       <div className="features-container">
         {features &&
           features.map(
-            ({
-              id,
-              role,
-              name,
-              links,
-              image,
-              article,
-              website,
-              technologies,
-            }) => (
-              <div className="features-wrapper" key={id}>
+            (
+              { id, role, name, links, image, article, website, technologies },
+              index
+            ) => (
+              <div
+                key={index}
+                className="features-wrapper"
+                style={{
+                  margin: `${index === 1 ? "100px 0px" : "0px"}`,
+                  flexDirection: `${index === 1 ? "row-reverse" : "row"}`,
+                }}
+              >
                 <div className="feature-image">
                   <a href={website} target="_blank" rel="noopenner noreferrer">
                     <Image
@@ -136,7 +118,10 @@ export default function Features() {
                     />
                   </a>
                 </div>
-                <div className="feature-content">
+                <div
+                  className="feature-content"
+                  style={{ textAlign: `${index === 1 ? "left" : "right"}` }}
+                >
                   <div className="theme-detail">
                     <p className="featured-one">{role}</p>
                     <a
@@ -147,18 +132,55 @@ export default function Features() {
                     >
                       {name}
                     </a>
-                    <p className="featured-three">{article}</p>
+                    <p
+                      className="featured-three"
+                      style={{
+                        margin: `${
+                          index === 1
+                            ? "0px -60px 0px 0px"
+                            : "0px 0px 0px -60px"
+                        }`,
+                      }}
+                    >
+                      {article}
+                    </p>
                   </div>
-                  <ul className="theme-technologies">
+                  <ul
+                    className="theme-technologies"
+                    style={{ justifyContent: `${index !== 1 && "flex-end"}` }}
+                  >
                     {technologies &&
                       technologies.map(({ id, tech }) => (
-                        <li key={id}>{tech}</li>
+                        <li
+                          key={id}
+                          style={{
+                            margin: `${
+                              index === 1
+                                ? "20px 20px 20px 0px"
+                                : "20px 0px 20px 20px"
+                            }`,
+                          }}
+                        >
+                          {tech}
+                        </li>
                       ))}
                   </ul>
-                  <ul className="theme-source">
+                  <ul
+                    className="theme-source"
+                    style={{ justifyContent: `${index !== 1 && "flex-end"}` }}
+                  >
                     {links &&
                       links.map(({ id, route, icon }) => (
-                        <li key={id}>
+                        <li
+                          key={id}
+                          style={{
+                            margin: `${
+                              index === 1
+                                ? "0px 30px 0px 0px"
+                                : "0px 0px 0px 30px"
+                            }`,
+                          }}
+                        >
                           <a
                             href={route}
                             target="_blank"

@@ -5,7 +5,7 @@ import { Icon } from "../configs/icons";
 const StyledSocial = styled.div`
   position: fixed;
   left: 50px;
-  bottom: -1%;
+  bottom: -10px;
   text-align: center;
   &::after {
     content: "";
