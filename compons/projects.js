@@ -1,4 +1,5 @@
 import { projects } from "../configs";
+import { Icon } from "../configs/icons";
 import styled from "styled-components";
 
 const StyledProjects = styled.div`
@@ -12,7 +13,54 @@ const StyledProjects = styled.div`
       letter-spacing: 4px;
     }
   }
-  .projects-content {
+
+  .project-container {
+    margin-top: 44px;
+    ${({ theme }) => theme.mixins.flexBetween}
+    flex-wrap: wrap;
+    .project-wrapper {
+      display: block;
+      width: 326px;
+      height: 366px;
+      margin-top: 11px;
+      padding: 30px 20px;
+      background: var(--light-navy);
+      border-radius: var(--border-radius);
+      .project-icons {
+        ${({ theme }) => theme.mixins.flexBetween}
+        .folder > svg {
+          width: 40px;
+          height: 40px;
+          display: block;
+          color: var(--green);
+        }
+        .github > svg {
+          width: 25px;
+          height: 25px;
+          display: block;
+        }
+      }
+      .project-article {
+        min-height: 180px;
+        margin: 40px 0px 20px 0px;
+        .title {
+          letter-spacing: 2px;
+        }
+        .description {
+          font-size: var(--fz-sm);
+        }
+      }
+      .project-technologies {
+        display: flex;
+        li {
+          margin-right: 34px;
+        }
+      }
+      &:hover {
+        transform: var(--translateY);
+        transition: var(--transition);
+      }
+    }
   }
 `;
 
@@ -25,7 +73,39 @@ export default function Projects() {
         <h2 className="small-heading">Other Noteworthy Projects</h2>
         <p className="small-title">View the Archive</p>
       </div>
-      <div className="projects-content"></div>
+
+      <div className="project-container">
+        {projects &&
+          projects.map(
+            ({ id, name, description, website, github, technologies }) => (
+              <a
+                key={id}
+                href={website}
+                target="noopenner noreferrer"
+                className="project-wrapper"
+              >
+                <div className="project-icons">
+                  <span className="folder">
+                    <Icon name="Folder"></Icon>
+                  </span>
+                  <span className="github">
+                    <Icon name="GitHub"></Icon>
+                  </span>
+                </div>
+                <div className="project-article">
+                  <h4 className="title">{name}</h4>
+                  <p className="description">{description}</p>
+                </div>
+                <ul className="project-technologies">
+                  {technologies &&
+                    technologies.map(({ id, tech }) => (
+                      <li key={id}>{tech}</li>
+                    ))}
+                </ul>
+              </a>
+            )
+          )}
+      </div>
     </StyledProjects>
   );
 }

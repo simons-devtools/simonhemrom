@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Icon } from "../configs/icons";
 
 const StyledFooter = styled.div`
-  padding: 20px 0px;
+  padding: 25px 0px;
   text-align: center;
   font-family: monospace;
   font-size: var(--fz-xs);
