@@ -34,6 +34,10 @@ const StyledFeatures = styled.section`
             border-radius: var(--border-radius);
           }
         }
+        &:hover::after {
+          display: none;
+          transition: var(--transition);
+        }
       }
 
       .feature-content {
