@@ -10,7 +10,7 @@ const StyledProjects = styled.div`
     text-align: center;
     .small-title {
       color: var(--green);
-      letter-spacing: 4px;
+      letter-spacing: 2px;
     }
   }
 
@@ -70,8 +70,8 @@ export default function Projects() {
   return (
     <StyledProjects>
       <div className="projects-header">
-        <h2 className="small-heading">Other Noteworthy Projects</h2>
         <p className="small-title">View the Archive</p>
+        <h2 className="small-heading">Other Noteworthy Projects</h2>
       </div>
 
       <div className="project-container">
