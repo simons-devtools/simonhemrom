@@ -1,7 +1,7 @@
 const projects = [
   {
     id: 1,
-    name: "Find food recipe live videos (search)",
+    name: "Food recipe videos (search)",
     description:
       "If you want to make a special kind of food for a restaurant or home but you don't know what you have to do to make it, you can search for that item and find its live videos.",
     website: "https://msimon.netlify.app",
@@ -14,7 +14,7 @@ const projects = [
   },
   {
     id: 2,
-    name: "BD-desh tourism agency (travels)",
+    name: "Tourism agency (travels)",
     description:
       "You just have to be more discriminating with the help you render toward other people. You just have to be more discriminating with the help you render toward other people. Then this website can work well for them for booking.",
     website: "https://msimon.netlify.app",
@@ -27,7 +27,7 @@ const projects = [
   },
   {
     id: 3,
-    name: "Hotel-x public company (realstate)",
+    name: "Hotel booking (online)",
     description:
       "You have left your city for work or travel to another city. You may need to rent a house to stay but of course you can't decide how to manage it. Then by logging in to this website you will be able to book the room as per your requirement",
     website: "https://msimon.netlify.app",
