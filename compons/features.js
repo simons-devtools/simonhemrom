@@ -26,13 +26,12 @@ const StyledFeatures = styled.section`
           background: var(--green-tint);
           border-radius: var(--border-radius);
         }
-        a {
+        a,
+        .image {
+          width: 100%;
+          height: 100%;
           display: block;
-          .image {
-            width: 100%;
-            height: 100%;
-            border-radius: var(--border-radius);
-          }
+          border-radius: var(--border-radius);
         }
         &:hover::after {
           display: none;

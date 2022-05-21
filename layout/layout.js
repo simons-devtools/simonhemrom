@@ -17,13 +17,13 @@ export default function Layout({ children, location }) {
     <Fragment>
       <Sitemeta title="Simon Hemrom | Protfolio" />
 
-      <div id="root">
+      <div>
         <ThemeProvider theme={theme}>
           <Globalstyles />
           {isActive ? (
             <IconLoader />
           ) : (
-            <Fragment>
+            <div>
               <Navbar />
               <Social />
 
@@ -31,7 +31,7 @@ export default function Layout({ children, location }) {
 
               <Email />
               <Footer />
-            </Fragment>
+            </div>
           )}
         </ThemeProvider>
       </div>
