@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styled from "styled-components";
 import { Icon } from "../configs/icons";
 
@@ -8,15 +7,17 @@ const StyledFooter = styled.div`
   font-family: monospace;
   font-size: var(--fz-xs);
   color: var(--light-slate);
-  a:hover {
-    color: var(--green) !important;
-    transition: var(--transition);
-  }
-  span {
-    margin: 0px 10px;
-    svg {
-      width: 15px;
-      height: 15px;
+  a {
+    span {
+      margin: 0px 10px;
+      svg {
+        width: 15px;
+        height: 15px;
+      }
+    }
+    &:hover {
+      color: var(--green);
+      transition: var(--transition);
     }
   }
 
@@ -28,19 +29,21 @@ const StyledFooter = styled.div`
 export default function Footer() {
   return (
     <StyledFooter>
-      <Link href="/" target="_blank" passHref>
-        <a className="">
-          <div>Designed & Built by Simon Hemrom</div>
-          <div className="github-info">
-            <span>
-              <Icon name="Star" /> 4,784
-            </span>
-            <span>
-              <Icon name="Fork" /> 2,187
-            </span>
-          </div>
-        </a>
-      </Link>
+      <a
+        href="https://www.google.com"
+        target="_blank"
+        rel="noopenner noreferrer"
+      >
+        <div>Designed & Built by Simon Hemrom</div>
+        <div className="github-info">
+          <span>
+            <Icon name="Star" /> 4,784
+          </span>
+          <span>
+            <Icon name="Fork" /> 2,187
+          </span>
+        </div>
+      </a>
     </StyledFooter>
   );
 }

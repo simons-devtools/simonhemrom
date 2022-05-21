@@ -18,6 +18,9 @@ const StyledNavbar = styled.nav`
     ${({ theme }) => theme.mixins.flexBetween}
     .left-content {
       flex-basis: 44%;
+      svg {
+        display: block;
+      }
     }
     .right-content {
       flex-basis: 48%;
