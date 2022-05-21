@@ -70,8 +70,8 @@ export default function Projects() {
   return (
     <StyledProjects>
       <div className="projects-header">
-        <p className="small-title">View the Archive</p>
         <h2 className="small-heading">Other Noteworthy Projects</h2>
+        <p className="small-title">View the Archive</p>
       </div>
 
       <div className="project-container">

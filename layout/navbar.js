@@ -9,12 +9,12 @@ const StyledNavbar = styled.nav`
   left: 0px;
   z-index: 1000;
   width: 100%;
-  height: 100px;
-  padding: 0px 50px;
+  height: var(--nav-height);
+  padding: 0px 50px 0px 50px;
   transition: var(--transition);
   box-shadow: var(--navy-shadow);
   .navbar-content {
-    height: 100px;
+    height: 100%;
     ${({ theme }) => theme.mixins.flexBetween}
     .left-content {
       flex-basis: 44%;
@@ -59,8 +59,10 @@ export default function Navbar() {
     if (prevScrollpos > currentScrollPos) {
       if (currentScrollPos) {
         navbar.style.top = "0px";
+        navbar.style.height = "var(--nav-scroll-height)";
         navbar.style.background = "var(--light-navy)";
       } else {
+        navbar.style.height = "var(--nav-height)";
         navbar.style.background = "transparent";
       }
     } else {
