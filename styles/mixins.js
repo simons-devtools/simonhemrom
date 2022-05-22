@@ -175,7 +175,7 @@ const mixins = {
   `,
 
   fadeInAll: css`
-    animation: ${fadein} 4s both;
+    animation: ${fadein} 3s both;
   `,
 };
 

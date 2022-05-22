@@ -5,9 +5,6 @@ import { ThemeProvider } from "styled-components";
 import { Sitemeta, Navbar, Email, Social, Footer } from "../layout";
 
 export default function Layout({ children, location }) {
-  console.log(location);
-
-  // Set the window loader:
   const [isActive, setIsActive] = React.useState(true);
   setTimeout(() => {
     setIsActive(false);
@@ -17,24 +14,22 @@ export default function Layout({ children, location }) {
     <Fragment>
       <Sitemeta title="Simon Hemrom | Protfolio" />
 
-      <div>
-        <ThemeProvider theme={theme}>
-          <Globalstyles />
-          {isActive ? (
-            <IconLoader />
-          ) : (
-            <div>
-              <Navbar />
-              <Social />
+      <ThemeProvider theme={theme}>
+        <Globalstyles />
+        {isActive ? (
+          <IconLoader />
+        ) : (
+          <Fragment>
+            <Navbar />
+            <Social />
 
-              <main id="content">{children}</main>
+            <main id="content">{children}</main>
 
-              <Email />
-              <Footer />
-            </div>
-          )}
-        </ThemeProvider>
-      </div>
+            <Email />
+            <Footer />
+          </Fragment>
+        )}
+      </ThemeProvider>
     </Fragment>
   );
 }

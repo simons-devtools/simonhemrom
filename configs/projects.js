@@ -4,8 +4,8 @@ const projects = [
     name: "Food recipe videos (search)",
     description:
       "If you want to make a special kind of food for a restaurant or home but you don't know what you have to do to make it, you can search for that item and find its live videos.",
-    website: "https://msimon.netlify.app",
-    github: "https://github.com/spsimon-dev-tools/food-search",
+    website: "https://simonhemrom.netlify.app",
+    github: "https://github.com/simons-devtools/food-recipe",
     technologies: [
       { id: 1, tech: "React" },
       { id: 2, tech: "Express" },
@@ -17,8 +17,8 @@ const projects = [
     name: "Tourism agency (travels)",
     description:
       "You just have to be more discriminating with the help you render toward other people. You just have to be more discriminating with the help you render toward other people. Then this website can work well for them for booking.",
-    website: "https://msimon.netlify.app",
-    github: "https://github.com/spsimon-dev-tools/desh-tourism",
+    website: "https://simonhemrom.netlify.app",
+    github: "https://github.com/simons-devtools/tourism-agency",
     technologies: [
       { id: 1, tech: "React" },
       { id: 2, tech: "Express" },
@@ -30,8 +30,8 @@ const projects = [
     name: "Hotel booking (online)",
     description:
       "You have left your city for work or travel to another city. You may need to rent a house to stay but of course you can't decide how to manage it. Then by logging in to this website you will be able to book the room as per your requirement",
-    website: "https://msimon.netlify.app",
-    github: "https://github.com/spsimon-dev-tools/hotel-x",
+    website: "https://simonhemrom.netlify.app",
+    github: "https://github.com/simons-devtools/hotel-booking",
     technologies: [
       { id: 1, tech: "React" },
       { id: 2, tech: "Express" },
@@ -43,8 +43,8 @@ const projects = [
     name: "Team network (care-center)",
     description:
       "If you want to manage some people for a party or event then you can easily manage the people as per your need by logging in to this web page.",
-    website: "https://msimon.netlify.app",
-    github: "https://github.com/spsimon-dev-tools/volunteer-team",
+    website: "https://simonhemrom.netlify.app",
+    github: "https://github.com/simons-devtools/team-network",
     technologies: [
       { id: 1, tech: "React" },
       { id: 2, tech: "Express" },
@@ -53,11 +53,11 @@ const projects = [
   },
   {
     id: 5,
-    name: "Deshboard (source-control)",
+    name: "React deshboard (app-cms)",
     description:
       "Imagine that you have a personal website and you can't manage where and how. In that case this dashboard can give you some great features. Such as users, products, create, update, delete.",
-    website: "https://msimon.netlify.app",
-    github: "https://github.com/spsimon-dev-tools/dashboard",
+    website: "https://simonhemrom.netlify.app",
+    github: "https://github.com/simons-devtools/react-dashboard",
     technologies: [
       { id: 1, tech: "React" },
       { id: 2, tech: "Express" },
@@ -69,8 +69,8 @@ const projects = [
     name: "New fearures (chat-board)",
     description:
       "You want to have a conversation with one of your personal people or team but you do not want to share it with anyone but them. I am creating a simple chat application according to that feature. You can follow me to get updates.",
-    website: "https://msimon.netlify.app",
-    github: "#0",
+    website: "https://simonhemrom.netlify.app",
+    github: "https://github.com/simons-devtools",
     technologies: [
       { id: 1, tech: "React" },
       { id: 2, tech: "Express" },

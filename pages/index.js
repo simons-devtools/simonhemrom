@@ -6,16 +6,17 @@ import {
   Projects,
   Contactme,
 } from "../compons";
+import React, { Fragment } from "react";
 
 export default function IndexPage() {
   return (
-    <section>
+    <Fragment>
       <Header />
       <Aboutme />
       <Experiences />
       <Features />
       <Projects />
       <Contactme />
-    </section>
+    </Fragment>
   );
 }

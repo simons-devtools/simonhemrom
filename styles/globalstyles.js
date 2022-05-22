@@ -63,10 +63,10 @@ const Globalstyles = createGlobalStyle`
   main {
     padding: 0px 148px;
     ${({ theme }) => theme.mixins.fadeInAll}
-    section {
-      /* width: 1000px;
+    header, section, footer {
+      width: 1000px;
       margin: 0px auto;
-      padding: 100px 0px; */
+      padding: 100px 0px;
       @media (max-width: 768px) {
         padding: 80px 0px;
       }
