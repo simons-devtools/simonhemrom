@@ -12,7 +12,7 @@ export default function Layout({ children, location }) {
 
   return (
     <Fragment>
-      <Sitemeta title="Simon Hemrom | Protfolio" />
+      <Sitemeta title="Simon Hemrom | Portfolio" />
 
       <ThemeProvider theme={theme}>
         <Globalstyles />
