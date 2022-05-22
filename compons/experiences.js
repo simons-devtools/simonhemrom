@@ -53,7 +53,7 @@ export default function Experiences() {
 
   return (
     <StyledExperiences id="experiences-section">
-      <h2 className="numbered-heading">Where I ve Worked</h2>
+      <h2 className="numbered-heading">Where I&apos;ve Worked</h2>
       <div className="experiences-content">
         <ul className="tab-panel-items">
           {tabPanels &&

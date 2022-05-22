@@ -23,7 +23,10 @@ const StyledFeatures = styled.section`
           content: "";
           width: 100%;
           height: 100%;
-          background: var(--green-tint);
+          background-image: linear-gradient(
+            rgb(0, 0, 0, 0.5),
+            rgb(0, 0, 0, 0.5)
+          );
           border-radius: var(--border-radius);
         }
         a,
@@ -32,10 +35,18 @@ const StyledFeatures = styled.section`
           height: 100%;
           display: block;
           border-radius: var(--border-radius);
+          filter: blur(2px);
         }
-        &:hover::after {
-          display: none;
-          transition: var(--transition);
+        &:hover {
+          a,
+          .image {
+            filter: blur(0px);
+            transition: var(--transition);
+          }
+          &::after {
+            display: none;
+            transition: var(--transition);
+          }
         }
       }
 

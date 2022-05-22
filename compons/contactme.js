@@ -30,7 +30,7 @@ export default function Contact() {
   return (
     <StyledContact id="contact-section">
       <div className="contact-heading">
-        <h4 className="heading-one">04. What is Next?</h4>
+        <h4 className="heading-one">04. What&apos;s Next?</h4>
         <h2 className="heading-two">Get In Touch</h2>
       </div>
       <div className="contact-description">

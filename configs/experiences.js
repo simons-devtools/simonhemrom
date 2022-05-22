@@ -1,7 +1,7 @@
 const experiences = {
   tabPanels: [
     { id: 1, name: "Upstatement" },
-    { id: 2, name: "PHero" },
+    { id: 2, name: "ProHero" },
     { id: 3, name: "SeoClerk" },
     { id: 4, name: "Fiverr" },
     { id: 5, name: "HAcademy" },
