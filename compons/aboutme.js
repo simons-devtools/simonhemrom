@@ -77,21 +77,23 @@ export default function Aboutme() {
   const aboutData = [
     {
       text1:
-        "Hello! My name is Msimon and I enjoy creating things that live on the internet. My interest in web development started back in 2019 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!",
+        "Hello! My name is Simon Hemrom and I enjoy creating things that live on the internet. My interest in web development started back in 2019 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!",
       text2:
         "Fast forward to today, and I'm looking for opportunities to work in an advertising agency, a start-up, a huge corporation, and a student-led design studio. Nowadays my main focus is to create accessible, inclusive products and digital experiences for different clients.",
       text3: "Here are a few technologies I've been working with recently:",
     },
     {
       skills: [
-        "JavaScript (ES6)",
-        "Express.js",
-        "Node.js",
-        "Mongodb cloud",
-        "React",
-        "Bootstrap",
-        "Wordpress",
-        "Material ui",
+        "html5, css3, sass, es6, jsx",
+        "React and Native, Gatsby, Next",
+        "GitHub, GitLab, Bitbucket",
+        "Express.js, Node.js, MongoDB",
+        "Netlify, Heroku, Vercel, WP",
+        "React Bootstrap, Material UI",
+        "Chrome and Azure (Devtools)",
+        "VS Code, Sublime Text, Notepad++",
+        "Figma, Canva, Photopea, AI",
+        "Cloudinary, Pixabay, ImageBB",
       ],
     },
   ];
