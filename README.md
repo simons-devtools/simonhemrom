@@ -5,7 +5,7 @@
   simonhemrom.netlify.app
 </h1>
 <p align="center">
-  The first iteration of <a href="https://simonhemrom.netlify.app" target="_blank">simonhemrom.netlify.app</a> built with <a href="https://www.nextjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>
+  The first iteration of <a href="https://simonhemrom.netlify.app" target="_blank">simonhemrom.netlify.app</a> built with <a href="https://www.nextjs.org/" target="_blank">Nextjs</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>
 </p>
 <p align="center">
   Next iterations:
