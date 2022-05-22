@@ -14,7 +14,7 @@ const StyledSocial = styled.div`
     display: inline-block;
     background: var(--light-slate);
   }
-  .social-icon {
+  a {
     display: block;
     width: 20px;
     height: 20px;
@@ -42,8 +42,8 @@ export default function Social() {
             href={url}
             target="_blank"
             rel="noopenner noreferrer"
-            className="social-icon"
             aria-label={name}
+            style={{ animation: `${({ theme }) => theme.mixins.fadeIn}` }}
           >
             <Icon name={name} />
           </a>

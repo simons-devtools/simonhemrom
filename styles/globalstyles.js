@@ -45,7 +45,6 @@ const Globalstyles = createGlobalStyle`
     background: var(--navy);
     font-size: var(--fz-md);
     font-family: var(--font-sans);
-    ${({ theme }) => theme.mixins.fadeInAll}
     &.hidden {
       overflow: hidden;
     }
@@ -63,6 +62,7 @@ const Globalstyles = createGlobalStyle`
   }
   main {
     padding: 0px 148px;
+    ${({ theme }) => theme.mixins.fadeInAll}
     section {
       /* width: 1000px;
       margin: 0px auto;

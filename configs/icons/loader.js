@@ -9,7 +9,6 @@ const StyledLogo = styled.span`
   right: 15%;
   bottom: 15%;
   z-index: 100;
-  ${({ theme }) => theme.mixins.fadeInAll}
 `;
 
 const IconLoader = () => {
