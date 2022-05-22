@@ -24,15 +24,9 @@ const StyledSocial = styled.div`
       transition: var(--transition);
     }
   }
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
 `;
 
 export default function Social() {
-  console.log("socials", socials);
-
   return (
     <StyledSocial>
       {socials &&
@@ -43,7 +37,6 @@ export default function Social() {
             target="_blank"
             rel="noopenner noreferrer"
             aria-label={name}
-            style={{ animation: `${({ theme }) => theme.mixins.fadeIn}` }}
           >
             <Icon name={name} />
           </a>

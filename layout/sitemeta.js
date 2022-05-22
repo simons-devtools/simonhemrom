@@ -14,7 +14,7 @@ export default function Sitemeta({ title, keywords, description }) {
 }
 
 Sitemeta.defaultProps = {
-  title: "Simon Hemrom | Protfolio",
+  title: "Simon Hemrom | Portfolio",
   keywords: "portfolio, resume, biodata",
   description:
     "Latest web developer online resume, biodata, and portfolio single web page",

@@ -25,16 +25,14 @@ const StyledEmail = styled.div`
       transition: var(--transition);
     }
   }
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
 `;
 
 export default function Email() {
   return (
     <StyledEmail>
-      <a href={`mailto:${profile.email}`}>{profile.email}</a>
+      <a href={`mailto:${profile.email}`} rel="noopenner noreferrer">
+        {profile.email}
+      </a>
     </StyledEmail>
   );
 }
