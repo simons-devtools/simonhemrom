@@ -15,7 +15,7 @@ const StyledProjects = styled.div`
   }
 
   .project-container {
-    margin-top: 44px;
+    margin: 44px 0px;
     ${({ theme }) => theme.mixins.flexBetween}
     flex-wrap: wrap;
     .project-wrapper {
@@ -62,6 +62,13 @@ const StyledProjects = styled.div`
       }
     }
   }
+
+  .project-btn {
+    text-align: center;
+    a {
+      ${({ theme }) => theme.mixins.smallButton}
+    }
+  }
 `;
 
 export default function Projects() {
@@ -105,6 +112,16 @@ export default function Projects() {
               </a>
             )
           )}
+      </div>
+
+      <div className="project-btn">
+        <a
+          href="https://github.com/simonsinfo"
+          target="_blank"
+          rel="noopenner noreferrer"
+        >
+          Show More Projects
+        </a>
       </div>
     </StyledProjects>
   );

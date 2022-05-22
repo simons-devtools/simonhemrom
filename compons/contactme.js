@@ -4,7 +4,7 @@ import styled from "styled-components";
 const StyledContact = styled.section`
   width: 1000px;
   margin: 0px auto;
-  padding: 150px 250px;
+  padding: 180px 250px;
   text-align: center;
   .contact-heading {
     .heading-one {

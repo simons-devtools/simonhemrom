@@ -11,7 +11,7 @@ export default function Layout({ children, location }) {
   const [isActive, setIsActive] = React.useState(true);
   setTimeout(() => {
     setIsActive(false);
-  }, 5000);
+  }, 3000);
 
   return (
     <Fragment>
