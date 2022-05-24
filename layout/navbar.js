@@ -46,13 +46,17 @@ const StyledNavbar = styled.nav`
         }
       }
       .resume-btn {
-        ${({ theme }) => theme.mixins.smallButton}
+        display: inline-block;
+        a {
+          ${({ theme }) => theme.mixins.smallButton}
+        }
       }
     }
   }
 `;
 
 export default function Navbar() {
+  const isHome = true;
   let prevScrollpos = window.pageYOffset;
 
   window.onscroll = () => {
@@ -96,20 +100,29 @@ export default function Navbar() {
         <div className="right-content">
           <ul>
             {navmenus &&
-              navmenus.map(({ menuName, menuId }, index) => (
-                <li key={index}>
+              navmenus.map(({ menuName, menuId }, i) => (
+                <li
+                  key={i}
+                  className={isHome ? "fadedown-enter-active" : ""}
+                  style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}
+                >
                   <a href={menuId}>{menuName}</a>
                 </li>
               ))}
           </ul>
-          <a
-            href={profile.resume}
-            target="_blank"
-            rel="noopenner noreferrer"
-            className="resume-btn"
-          >
-            Resume
-          </a>
+          <div className="resume-btn">
+            <a
+              href={profile.resume}
+              target="_blank"
+              rel="noopenner noreferrer"
+              className={isHome ? "fadedown-enter-active" : ""}
+              style={{
+                transitionDelay: `${isHome ? navmenus.length * 100 : 0}ms`,
+              }}
+            >
+              Resume
+            </a>
+          </div>
         </div>
       </div>
     </StyledNavbar>

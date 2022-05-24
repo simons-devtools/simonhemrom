@@ -15,7 +15,7 @@ const variables = css`
     --navy-shadow: rgba(2, 12, 27, 0.7);
     --green-tint: rgba(100, 255, 218, 0.1);
     --font-sans: "Poppins", "Roboto", sans-serif;
-    --font-roboto: "Roboto", sans-serif;
+    --font-robo: "Roboto", sans-serif;
     --fz-xxs: 12px;
     --fz-xs: 13px;
     --fz-sm: 14px;
