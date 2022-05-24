@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
 import { navmenus, profile } from "../configs";
@@ -18,7 +19,9 @@ const StyledNavbar = styled.nav`
     ${({ theme }) => theme.mixins.flexBetween}
     .left-content {
       flex-basis: 44%;
-      svg {
+      a {
+        width: 40px;
+        height: 40px;
         display: block;
       }
     }
@@ -76,14 +79,18 @@ export default function Navbar() {
     <StyledNavbar id="navbar">
       <div className="navbar-content">
         <div className="left-content">
-          <Image
-            src="/icons/logo.png"
-            width={40}
-            height={40}
-            quality={100}
-            alt="logo-img"
-            priority
-          />
+          <Link href="/">
+            <a>
+              <Image
+                src="/icons/logo.png"
+                width={40}
+                height={40}
+                quality={100}
+                alt="logo-img"
+                priority
+              />
+            </a>
+          </Link>
         </div>
 
         <div className="right-content">
