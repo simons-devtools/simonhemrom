@@ -9,15 +9,14 @@ const StyledLinkWrapper = styled.div`
   &:after {
     content: "";
     display: block;
-    width: 2.4px;
+    width: 2px;
     height: 90px;
     margin: 0 auto;
     background: var(--slate);
   }
 
   a {
-    padding: 10px 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-size: var(--fz-xxs);
     color: var(--light-slate);
     writing-mode: vertical-rl;

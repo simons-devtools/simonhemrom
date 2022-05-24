@@ -17,12 +17,9 @@ const StyledSocialList = styled.ul`
   }
 
   li {
-    &:last-of-type {
-      margin-bottom: 20px;
-    }
+    margin-bottom: 30px;
 
     a {
-      padding: 10px 10px;
       color: var(--light-slate);
 
       &:hover,
