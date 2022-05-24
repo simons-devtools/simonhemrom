@@ -1,38 +1,41 @@
 import { profile } from "../configs";
 import styled from "styled-components";
 
-const StyledEmail = styled.div`
+const StyledLinkWrapper = styled.div`
   position: fixed;
-  right: 0px;
-  bottom: 10px;
-  letter-spacing: 2px;
-  font-size: var(--fz-xs);
-  color: var(--lightest-slate);
-  transform: translate(100px, -140px) rotate(90deg);
-  &::after {
+  right: 50px;
+  bottom: -10px;
+
+  &:after {
     content: "";
-    width: 90px;
-    height: 2px;
-    margin: 0 0 2px 30px;
-    display: inline-block;
-    background: var(--light-slate);
+    display: block;
+    width: 2.4px;
+    height: 90px;
+    margin: 0 auto;
+    background: var(--slate);
   }
+
   a {
+    padding: 10px 10px;
+    margin-bottom: 10px;
     font-size: var(--fz-xxs);
-    color: var(--lightest-slate);
-    &:hover {
-      transform: var(--translateX);
-      transition: var(--transition);
+    color: var(--light-slate);
+    writing-mode: vertical-rl;
+    letter-spacing: 2px;
+
+    &:hover,
+    &:focus {
+      transform: translateY(-3px);
     }
   }
 `;
 
 export default function Email() {
   return (
-    <StyledEmail>
-      <a href={`mailto:${profile.email}`} rel="noopenner noreferrer">
+    <StyledLinkWrapper>
+      <a href={`mailto:${profile.email}`} rel="noreferrer">
         {profile.email}
       </a>
-    </StyledEmail>
+    </StyledLinkWrapper>
   );
 }
