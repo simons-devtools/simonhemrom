@@ -61,7 +61,7 @@ export default function Header() {
         <div
           key={i}
           className="fadeup-enter-active"
-          style={{ transitionDelay: `${i + 1}00ms` }}
+          style={{ transitionDelay: `${i * 100}ms` }}
         >
           {item}
         </div>
