@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
 import { theme, Globalstyles } from "../styles";
 import { ThemeProvider } from "styled-components";
-import { Sitemeta, Navbar, Email, Social, Footer } from "../layout";
+import { Sitemeta, Navbar, Footer, Social, Email } from "../layout";
 
-export default function Layout({ children, location }) {
-  const [isActive, setIsActive] = React.useState(true);
+export default function Layout({ children }) {
+  const [isMouted, setIsMouted] = React.useState(true);
   setTimeout(() => {
-    setIsActive(false);
+    setIsMouted(false);
   }, 3000);
 
   const styles = {
@@ -17,25 +17,24 @@ export default function Layout({ children, location }) {
   };
 
   return (
-    <Fragment>
-      <Sitemeta title="Simon Hemrom | Portfolio" />
+    <ThemeProvider theme={theme}>
+      <Globalstyles />
+      {isMouted ? (
+        <div style={styles}>Hi</div>
+      ) : (
+        <Fragment>
+          <Sitemeta />
+          <Navbar />
 
-      <ThemeProvider theme={theme}>
-        <Globalstyles />
-        {isActive ? (
-          <div style={styles}>Hi</div>
-        ) : (
-          <Fragment>
-            <Navbar />
-
-            <main id="content">{children}</main>
-
-            <Social />
-            <Email />
+          <main id="content">
+            {children}
             <Footer />
-          </Fragment>
-        )}
-      </ThemeProvider>
-    </Fragment>
+          </main>
+
+          <Social />
+          <Email />
+        </Fragment>
+      )}
+    </ThemeProvider>
   );
 }
