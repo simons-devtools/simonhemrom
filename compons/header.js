@@ -58,7 +58,13 @@ export default function Header() {
   return (
     <StyledHeader id="header-section">
       {items.map((item, i) => (
-        <div key={i}>{item}</div>
+        <div
+          key={i}
+          className="fadeup-enter-active"
+          style={{ transitionDelay: `${i + 1}00ms` }}
+        >
+          {item}
+        </div>
       ))}
     </StyledHeader>
   );
