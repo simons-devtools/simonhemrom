@@ -26,10 +26,10 @@ export default function Layout({ children }) {
           <Sitemeta />
           <Navbar />
 
-          <main id="content">
+          <div id="content">
             {children}
             <Footer />
-          </main>
+          </div>
 
           <Social />
           <Email />

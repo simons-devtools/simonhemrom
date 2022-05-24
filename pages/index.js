@@ -6,17 +6,21 @@ import {
   Projects,
   Contactme,
 } from "../compons";
-import React, { Fragment } from "react";
+import styled from "styled-components";
+
+const StyledMain = styled.main`
+  counter-reset: section;
+`;
 
 export default function IndexPage() {
   return (
-    <Fragment>
+    <StyledMain>
       <Header />
       <Aboutme />
       <Experiences />
       <Features />
       <Projects />
       <Contactme />
-    </Fragment>
+    </StyledMain>
   );
 }
