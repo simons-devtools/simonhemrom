@@ -27,10 +27,10 @@ export default function Layout({ children, location }) {
         ) : (
           <Fragment>
             <Navbar />
-            <Social />
 
             <main id="content">{children}</main>
 
+            <Social />
             <Email />
             <Footer />
           </Fragment>

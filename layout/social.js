@@ -7,13 +7,6 @@ const StyledSocial = styled.div`
   left: 50px;
   bottom: -10px;
   text-align: center;
-  &::after {
-    content: "";
-    width: 2px;
-    height: 90px;
-    display: inline-block;
-    background: var(--light-slate);
-  }
   a {
     display: block;
     width: 20px;
@@ -23,6 +16,13 @@ const StyledSocial = styled.div`
       transform: var(--translateY);
       transition: var(--transition);
     }
+  }
+  &::after {
+    content: "";
+    width: 2px;
+    height: 90px;
+    display: inline-block;
+    background: var(--light-slate);
   }
 `;
 
