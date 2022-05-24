@@ -16,21 +16,18 @@ const StyledSocialList = styled.ul`
     background: var(--slate);
   }
 
-  li {
-    margin-bottom: 30px;
+  a {
+    margin-bottom: 26px;
+    color: var(--light-slate);
 
-    a {
-      color: var(--light-slate);
+    &:hover,
+    &:focus {
+      transform: translateY(-3px);
+    }
 
-      &:hover,
-      &:focus {
-        transform: translateY(-3px);
-      }
-
-      svg {
-        width: 20px;
-        height: 20px;
-      }
+    svg {
+      width: 20px;
+      height: 20px;
     }
   }
 `;

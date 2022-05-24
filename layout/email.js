@@ -16,7 +16,7 @@ const StyledLinkWrapper = styled.div`
   }
 
   a {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: var(--fz-xxs);
     color: var(--light-slate);
     writing-mode: vertical-rl;
