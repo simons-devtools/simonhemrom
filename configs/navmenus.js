@@ -1,19 +1,19 @@
 const navmenus = [
   {
-    menuName: "About",
-    menuId: "#about-section",
+    name: "About",
+    url: "/#about-section",
   },
   {
-    menuName: "Experiences",
-    menuId: "#experiences-section",
+    name: "Experience",
+    url: "/#experiences-section",
   },
   {
-    menuName: "Projects",
-    menuId: "#projects-section",
+    name: "Projects",
+    url: "/#projects-section",
   },
   {
-    menuName: "Contact",
-    menuId: "#contact-section",
+    name: "Contact",
+    url: "/#contact-section",
   },
 ];
 

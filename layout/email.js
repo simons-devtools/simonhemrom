@@ -1,26 +1,32 @@
-import { profile } from "../configs";
+import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
+import { profile } from "../configs";
+import { Side } from "../layout";
 
 const StyledLinkWrapper = styled.div`
-  position: fixed;
-  right: 50px;
-  bottom: -10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 
   &:after {
     content: "";
     display: block;
-    width: 2px;
+    width: 1px;
     height: 90px;
     margin: 0 auto;
-    background: var(--slate);
+    background-color: var(--light-slate);
   }
 
   a {
-    margin-bottom: 30px;
+    margin: 20px auto;
+    padding: 10px;
+    font-family: var(--font-mono);
     font-size: var(--fz-xxs);
-    color: var(--light-slate);
+    line-height: var(--fz-lg);
+    letter-spacing: 0.1em;
     writing-mode: vertical-rl;
-    letter-spacing: 2px;
 
     &:hover,
     &:focus {
@@ -29,12 +35,16 @@ const StyledLinkWrapper = styled.div`
   }
 `;
 
-export default function Email() {
+export default function Email({ isHome }) {
   return (
-    <StyledLinkWrapper>
-      <a href={`mailto:${profile.email}`} rel="noreferrer">
-        {profile.email}
-      </a>
-    </StyledLinkWrapper>
+    <Side isHome={isHome} orientation="right">
+      <StyledLinkWrapper>
+        <a href={`mailto:${profile.email}`}>{profile.email}</a>
+      </StyledLinkWrapper>
+    </Side>
   );
 }
+
+Email.propTypes = {
+  isHome: PropTypes.bool,
+};

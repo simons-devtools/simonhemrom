@@ -1,130 +1,273 @@
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import styled from "styled-components";
-import { navmenus, profile } from "../configs";
+import PropTypes from "prop-types";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+import styled, { css } from "styled-components";
+import { navmenus } from "../configs";
+import { loaderDelay } from "../src/utils";
+import { useScrollDirection, usePrefersReducedMotion } from "../src/hooks";
+import { Menu } from "../layout";
+import { IconLogo } from "../configs/icons";
+import { useRouter } from "next/router";
 
-const StyledNavbar = styled.nav`
-  display: block;
+const StyledHeader = styled.header`
+  ${({ theme }) => theme.mixins.flexBetween};
   position: fixed;
-  top: 0px;
-  left: 0px;
-  z-index: 1000;
+  top: 0;
+  z-index: 11;
+  padding: 0px 50px;
   width: 100%;
   height: var(--nav-height);
-  padding: 0px 50px 0px 50px;
+  background-color: rgba(10, 25, 47, 0.85);
+  filter: none !important;
+  pointer-events: auto !important;
+  user-select: auto !important;
+  backdrop-filter: blur(10px);
   transition: var(--transition);
-  box-shadow: var(--navy-shadow);
-  .navbar-content {
-    height: 100%;
-    ${({ theme }) => theme.mixins.flexBetween}
-    .left-content {
-      flex-basis: 44%;
-      a {
-        width: 40px;
-        height: 40px;
-        display: block;
-      }
-    }
-    .right-content {
-      flex-basis: 48%;
-      text-align: end;
-      ul {
-        display: inline-block;
-        li {
-          display: inline-block;
-          margin-right: 30px;
-          letter-spacing: 2px;
-          font-size: var(--fz-xxs);
-          counter-increment: item 1;
-          &::before {
-            content: "0" counter(item) ".";
-            display: inline-block;
-            margin-right: 5px;
-            color: var(--green);
-            font-size: var(--fz-xxs);
-          }
+
+  @media (max-width: 1080px) {
+    padding: 0 40px;
+  }
+  @media (max-width: 768px) {
+    padding: 0 25px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    ${(props) =>
+      props.scrollDirection === "up" &&
+      !props.scrolledToTop &&
+      css`
+        height: var(--nav-scroll-height);
+        transform: translateY(0px);
+        background-color: rgba(10, 25, 47, 0.85);
+        box-shadow: 0 10px 30px -10px var(--navy-shadow);
+      `};
+
+    ${(props) =>
+      props.scrollDirection === "down" &&
+      !props.scrolledToTop &&
+      css`
+        height: var(--nav-scroll-height);
+        transform: translateY(calc(var(--nav-scroll-height) * -1));
+        box-shadow: 0 10px 30px -10px var(--navy-shadow);
+      `};
+  }
+`;
+
+const StyledNav = styled.nav`
+  ${({ theme }) => theme.mixins.flexBetween};
+  position: relative;
+  width: 100%;
+  color: var(--lightest-slate);
+  font-family: var(--font-mono);
+  counter-reset: item 0;
+  z-index: 12;
+
+  .logo {
+    ${({ theme }) => theme.mixins.flexCenter};
+
+    a {
+      color: var(--green);
+      width: 42px;
+      height: 42px;
+
+      &:hover,
+      &:focus {
+        svg {
+          fill: var(--green-tint);
         }
       }
-      .resume-btn {
-        display: inline-block;
-        a {
-          ${({ theme }) => theme.mixins.smallButton}
-        }
+
+      svg {
+        fill: none;
+        transition: var(--transition);
+        user-select: none;
       }
     }
   }
 `;
 
-export default function Navbar() {
-  const isHome = true;
-  let prevScrollpos = window.pageYOffset;
+const StyledLinks = styled.div`
+  display: flex;
+  align-items: center;
 
-  window.onscroll = () => {
-    const currentScrollPos = window.pageYOffset;
-    const navbar = document.getElementById("navbar");
+  @media (max-width: 768px) {
+    display: none;
+  }
 
-    if (prevScrollpos > currentScrollPos) {
-      if (currentScrollPos) {
-        navbar.style.top = "0px";
-        navbar.style.height = "var(--nav-scroll-height)";
-        navbar.style.background = "var(--light-navy)";
-      } else {
-        navbar.style.height = "var(--nav-height)";
-        navbar.style.background = "transparent";
+  ol {
+    ${({ theme }) => theme.mixins.flexBetween};
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      margin: 0 5px;
+      position: relative;
+      counter-increment: item 1;
+      font-size: var(--fz-xs);
+
+      a {
+        padding: 10px;
+
+        &:before {
+          content: "0" counter(item) ".";
+          margin-right: 5px;
+          color: var(--green);
+          font-size: var(--fz-xxs);
+          text-align: right;
+        }
       }
-    } else {
-      navbar.style.top = "-100px";
     }
+  }
 
-    prevScrollpos = currentScrollPos;
+  .resume-button {
+    ${({ theme }) => theme.mixins.smallButton};
+    margin-left: 15px;
+    font-size: var(--fz-xs);
+  }
+`;
+
+export default function Navbar({ isHome }) {
+  const [isMounted, setIsMounted] = useState(!isHome);
+  const scrollDirection = useScrollDirection("down");
+  const [scrolledToTop, setScrolledToTop] = useState(true);
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const { pathname } = useRouter();
+
+  const handleScroll = () => {
+    setScrolledToTop(window.pageYOffset < 50);
   };
 
-  return (
-    <StyledNavbar id="navbar">
-      <div className="navbar-content">
-        <div className="left-content">
-          <Link href="/">
-            <a>
-              <Image
-                src="/icons/logo.png"
-                width={40}
-                height={40}
-                quality={100}
-                alt="logo-img"
-                priority
-              />
-            </a>
-          </Link>
-        </div>
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      return;
+    }
 
-        <div className="right-content">
-          <ul>
-            {navmenus &&
-              navmenus.map(({ menuName, menuId }, i) => (
-                <li
-                  key={i}
-                  className={isHome ? "fadedown-enter-active" : ""}
-                  style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}
-                >
-                  <a href={menuId}>{menuName}</a>
-                </li>
-              ))}
-          </ul>
-          <div className="resume-btn">
-            <a
-              href={profile.resume}
-              target="_blank"
-              rel="noopenner noreferrer"
-              className={isHome ? "fadedown-enter-active" : ""}
-              style={{
-                transitionDelay: `${isHome ? navmenus.length * 100 : 0}ms`,
-              }}
-            >
-              Resume
-            </a>
-          </div>
-        </div>
-      </div>
-    </StyledNavbar>
+    const timeout = setTimeout(() => {
+      setIsMounted(true);
+    }, 100);
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prefersReducedMotion]);
+
+  const timeout = isHome ? loaderDelay : 0;
+  const fadeClass = isHome ? "fade" : "";
+  const fadeDownClass = isHome ? "fadedown" : "";
+
+  const Logo = (
+    <div className="logo" tabIndex="-1">
+      <a href={pathname} aria-label="home">
+        <IconLogo />
+      </a>
+    </div>
+  );
+
+  const ResumeLink = (
+    <a
+      className="resume-button"
+      href="https://github.com/simonsinfo"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Resume
+    </a>
+  );
+
+  return (
+    <StyledHeader
+      scrollDirection={scrollDirection}
+      scrolledToTop={scrolledToTop}
+    >
+      <StyledNav>
+        {prefersReducedMotion ? (
+          <>
+            {Logo}
+
+            <StyledLinks>
+              <ol>
+                {navmenus &&
+                  navmenus.map(({ url, name }, i) => (
+                    <li key={i}>
+                      <a href={url}>{name}</a>
+                    </li>
+                  ))}
+              </ol>
+              <div>{ResumeLink}</div>
+            </StyledLinks>
+
+            <Menu />
+          </>
+        ) : (
+          <>
+            <TransitionGroup component={null}>
+              {isMounted && (
+                <CSSTransition classNames={fadeClass} timeout={timeout}>
+                  <>{Logo}</>
+                </CSSTransition>
+              )}
+            </TransitionGroup>
+
+            <StyledLinks>
+              <ol>
+                <TransitionGroup component={null}>
+                  {isMounted &&
+                    navmenus &&
+                    navmenus.map(({ url, name }, i) => (
+                      <CSSTransition
+                        key={i}
+                        classNames={fadeDownClass}
+                        timeout={timeout}
+                      >
+                        <li
+                          key={i}
+                          style={{
+                            transitionDelay: `${isHome ? i * 100 : 0}ms`,
+                          }}
+                        >
+                          <a href={url}>{name}</a>
+                        </li>
+                      </CSSTransition>
+                    ))}
+                </TransitionGroup>
+              </ol>
+
+              <TransitionGroup component={null}>
+                {isMounted && (
+                  <CSSTransition classNames={fadeDownClass} timeout={timeout}>
+                    <div
+                      style={{
+                        transitionDelay: `${
+                          isHome ? navmenus.length * 100 : 0
+                        }ms`,
+                      }}
+                    >
+                      {ResumeLink}
+                    </div>
+                  </CSSTransition>
+                )}
+              </TransitionGroup>
+            </StyledLinks>
+
+            <TransitionGroup component={null}>
+              {isMounted && (
+                <CSSTransition classNames={fadeClass} timeout={timeout}>
+                  <Menu />
+                </CSSTransition>
+              )}
+            </TransitionGroup>
+          </>
+        )}
+      </StyledNav>
+    </StyledHeader>
   );
 }
+
+Navbar.propTypes = {
+  isHome: PropTypes.bool,
+};

@@ -6,21 +6,28 @@ import {
   Projects,
   Contactme,
 } from "../compons";
+import { Layout } from "../layout";
+import PropTypes from "prop-types";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 
-const StyledMain = styled.main`
+const StyledMainContainer = styled.main`
   counter-reset: section;
 `;
 
 export default function IndexPage() {
+  const location = useRouter();
+
   return (
-    <StyledMain>
-      <Header />
-      <Aboutme />
-      <Experiences />
-      <Features />
-      <Projects />
-      <Contactme />
-    </StyledMain>
+    <Layout location={location}>
+      <StyledMainContainer className="fillHeight">
+        <Header />
+        <Aboutme />
+        <Experiences />
+        <Features />
+        <Projects />
+        <Contactme />
+      </StyledMainContainer>
+    </Layout>
   );
 }

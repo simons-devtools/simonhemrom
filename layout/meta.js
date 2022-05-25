@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-export default function Sitemeta({ title, keywords, description }) {
+export default function Meta({ title, keywords, description }) {
   return (
     <Head>
       <meta charSet="utf-8" />
@@ -13,7 +13,7 @@ export default function Sitemeta({ title, keywords, description }) {
   );
 }
 
-Sitemeta.defaultProps = {
+Meta.defaultProps = {
   title: "Simon Hemrom | Portfolio",
   keywords: "portfolio, resume, biodata",
   description:
