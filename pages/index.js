@@ -7,7 +7,6 @@ import {
   Contactme,
 } from "../compons";
 import { Layout } from "../layout";
-import PropTypes from "prop-types";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 
