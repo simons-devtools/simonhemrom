@@ -12,11 +12,13 @@ const StyledExperiences = styled.section`
         border-left: 2px solid var(--lightest-navy);
         li {
           padding: 12px 15px;
+          font-size: var(--fz-sm);
           &.active {
             margin-left: -2px;
             color: var(--green);
             background: var(--light-navy);
             border-left: 3px solid var(--green);
+            transition: var(--transition);
           }
           &:hover {
             color: var(--green);
@@ -27,9 +29,9 @@ const StyledExperiences = styled.section`
       }
 
       .tab-panel-content {
-        ${({ theme }) => theme.mixins.fadeIn}
+        padding: 15px 0px 15px 30px;
         .panel-detail {
-          padding: 15px 0px 15px 30px;
+          ${({ theme }) => theme.mixins.fadeIn}
           .panel-description > p {
             letter-spacing: 2px;
             padding-bottom: 20px;
@@ -49,7 +51,7 @@ const StyledExperiences = styled.section`
 
 export default function Experiences() {
   const { tabPanels, tabPanelList } = experiences;
-  const [isActive, setIsActive] = React.useState(1);
+  const [isActive, setIsActive] = React.useState(0);
 
   return (
     <StyledExperiences id="experiences-section">
@@ -58,11 +60,11 @@ export default function Experiences() {
         <div className="experiences-content">
           <ul className="tab-panel-items">
             {tabPanels &&
-              tabPanels.map(({ id, name }, index) => (
+              tabPanels.map(({ id, name }, i) => (
                 <li
-                  key={index}
-                  className={`${id === isActive ? "active" : ""}`}
-                  onClick={() => setIsActive(id)}
+                  key={i}
+                  className={`${i === isActive ? "active" : ""}`}
+                  onClick={() => setIsActive(i)}
                 >
                   {name}
                 </li>
@@ -71,9 +73,9 @@ export default function Experiences() {
 
           <div className="tab-panel-content">
             {tabPanelList &&
-              tabPanelList.map(({ id, name, start, end, works }, index) =>
-                isActive === id ? (
-                  <div className="panel-detail" key={index}>
+              tabPanelList.map(({ id, name, start, end, works }, i) =>
+                isActive === i ? (
+                  <div className="panel-detail" key={i}>
                     <div className="panel-description">
                       <h3>{name}</h3>
                       <p>
@@ -84,8 +86,8 @@ export default function Experiences() {
                     </div>
                     <ul className="panel-items">
                       {works &&
-                        works.map(({ list }, index) => (
-                          <li key={index} className="item">
+                        works.map(({ list }, i) => (
+                          <li key={i} className="item">
                             {list}
                           </li>
                         ))}

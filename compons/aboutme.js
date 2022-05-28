@@ -1,194 +1,145 @@
-import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import { Fragment } from "react";
 import styled from "styled-components";
-// import { srConfig } from "../configs";
-// import sr from "../src/utils/sr";
-import { usePrefersReducedMotion } from "../src/hooks";
 
-const StyledAboutSection = styled.section`
-  max-width: 900px;
-
-  .inner {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    grid-gap: 50px;
-
-    @media (max-width: 768px) {
-      display: block;
-    }
-  }
-`;
-const StyledText = styled.div`
-  ul.skills-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(140px, 200px));
-    grid-gap: 0 10px;
-    padding: 0;
-    margin: 20px 0 0 0;
-    overflow: hidden;
-    list-style: none;
-
-    li {
-      position: relative;
-      margin-bottom: 10px;
-      padding-left: 20px;
-      font-family: var(--font-mono);
-      font-size: var(--fz-xs);
-
-      &:before {
-        content: "▹";
-        position: absolute;
-        left: 0;
-        color: var(--green);
-        font-size: var(--fz-sm);
-        line-height: 12px;
-      }
-    }
-  }
-`;
-const StyledPic = styled.div`
-  position: relative;
-  max-width: 300px;
-
-  @media (max-width: 768px) {
-    margin: 50px auto 0;
-    width: 70%;
-  }
-
-  .wrapper {
-    ${({ theme }) => theme.mixins.boxShadow};
-    display: block;
-    position: relative;
-    width: 100%;
-    border-radius: var(--border-radius);
-    background-color: var(--green);
-
-    &:hover,
-    &:focus {
-      background: transparent;
-      outline: 0;
-
-      &:after {
-        top: 15px;
-        left: 15px;
+const StyledHeader = styled.section`
+  .about-wrapper {
+    padding: 0px 50px;
+    .about-content {
+      ${({ theme }) => theme.mixins.flexBetween}
+      align-items: flex-start;
+      .left-content {
+        width: 540px;
+        margin-right: 30px;
+        .list-items {
+          ${({ theme }) => theme.mixins.fancyList}
+          .item {
+            width: 50%;
+            margin: 3px 0px;
+            color: var(--slate);
+            display: inline-block;
+          }
+        }
       }
 
-      .img {
-        filter: none;
-        mix-blend-mode: normal;
+      .right-content {
+        position: relative;
+        z-index: 20;
+        width: 300px;
+        height: 300px;
+        background: var(--green);
+        &::before {
+          display: block;
+          position: absolute;
+          bottom: 0px;
+          content: "";
+          width: 100%;
+          height: 100%;
+          border: 1px solid var(--green);
+          transform: translate(10px, 10px);
+        }
+        &::after {
+          display: block;
+          position: absolute;
+          top: 0px;
+          content: "";
+          width: 100%;
+          height: 100%;
+          border: 1px solid var(--green);
+          transform: translate(-10px, -10px);
+        }
+        .image {
+          width: 100%;
+          height: 100%;
+          mix-blend-mode: multiply;
+          filter: grayscale(100%) contrast(1);
+        }
+        &:hover {
+          cursor: grabbing;
+          &::before {
+            border-color: var(--slate);
+            transition: var(--transition);
+            transform: translate(-10px, -10px);
+          }
+          &::after {
+            border-color: var(--slate);
+            transition: var(--transition);
+            transform: translate(10px, 10px);
+          }
+          .image {
+            filter: none;
+            mix-blend-mode: normal;
+            transition: var(--transition);
+          }
+        }
       }
-    }
-
-    .img {
-      position: relative;
-      border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1);
-      transition: var(--transition);
-    }
-
-    &:before,
-    &:after {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: var(--border-radius);
-      transition: var(--transition);
-    }
-
-    &:before {
-      top: 0;
-      left: 0;
-      background-color: var(--navy);
-      mix-blend-mode: screen;
-    }
-
-    &:after {
-      border: 2px solid var(--green);
-      top: 20px;
-      left: 20px;
-      z-index: -1;
     }
   }
 `;
 
 export default function Aboutme() {
-  const revealContainer = useRef("");
-  const prefersReducedMotion = usePrefersReducedMotion();
-
-  useEffect(() => {
-    if (prefersReducedMotion) {
-      return;
-    }
-
-    // sr.reveal(revealContainer.current, srConfig());
-  }, [prefersReducedMotion]);
-
-  const skills = [
-    "JavaScript (ES6+)",
-    "React",
-    "Eleventy",
-    "Vue",
-    "Node.js",
-    "WordPress",
+  const aboutData = [
+    {
+      text1:
+        "Hello! My name is Simon Hemrom and I enjoy creating things that live on the internet. My interest in web development started back in 2019 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!",
+      text2:
+        "Fast forward to today, and I'm looking for opportunities to work in an advertising agency, a start-up, a huge corporation, and a student-led design studio. Nowadays my main focus is to create accessible, inclusive products and digital experiences for different clients.",
+      text3: "Here are a few technologies I've been working with recently:",
+    },
+    {
+      skills: [
+        "html5, css3, sass, es6, jsx",
+        "React and Native, Gatsby, Next",
+        "GitHub, GitLab, Bitbucket",
+        "Express.js, Node.js, MongoDB",
+        "Netlify, Heroku, Vercel, WP",
+        "React Bootstrap, Material UI",
+        "Chrome and Azure (Devtools)",
+        "VS Code, Sublime Text, Notepad++",
+        "Figma, Canva, Photopea, AI",
+        "Cloudinary, Pixabay, ImageBB",
+      ],
+    },
   ];
 
   return (
-    <StyledAboutSection id="about-section" ref={revealContainer}>
-      <h2 className="numbered-heading">About Me</h2>
+    <StyledHeader id="about-section">
+      <div className="about-wrapper">
+        <h2 className="numbered-heading">About Me</h2>
 
-      <div className="inner">
-        <StyledText>
-          <div>
-            <p>
-              Hello! My name is Brittany and I enjoy creating things that live
-              on the internet. My interest in web development started back in
-              2012 when I decided to try editing custom Tumblr themes — turns
-              out hacking together a custom reblog button taught me a lot about
-              HTML &amp; CSS!
-            </p>
-
-            <p>
-              Fast-forward to today, and I&apos;ve had the privilege of working
-              at <a href="https://us.mullenlowe.com/">an advertising agency</a>,{" "}
-              <a href="https://starry.com/">a start-up</a>,{" "}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{" "}
-              <a href="https://scout.camd.northeastern.edu/">
-                a student-led design studio
-              </a>
-              . My main focus these days is building accessible, inclusive
-              products and digital experiences at{" "}
-              <a href="https://upstatement.com/">Upstatement</a> for a variety
-              of clients.
-            </p>
-
-            <p>
-              Here are a few technologies I&apos;ve been working with recently:
-            </p>
+        <div className="about-content">
+          <div className="left-content">
+            {aboutData &&
+              aboutData.map(({ text1, text2, text3, skills }, index) => (
+                <Fragment key={index}>
+                  <p>{text1}</p>
+                  <p>{text2}</p>
+                  <p>{text3}</p>
+                  <ul className="list-items">
+                    {skills &&
+                      skills.map((skill, index) => (
+                        <li key={index} className="item">
+                          {skill}
+                        </li>
+                      ))}
+                  </ul>
+                </Fragment>
+              ))}
           </div>
 
-          <ul className="skills-list">
-            {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
-          </ul>
-        </StyledText>
-
-        <StyledPic>
-          <div className="wrapper">
+          <div className="right-content">
             <Image
-              className="img"
               src="/icons/profile.png"
-              width={500}
-              height={500}
-              quality={95}
-              formats={["AUTO", "WEBP", "AVIF"]}
-              alt="Headshot"
+              width={300}
+              height={300}
+              quality={90}
+              alt="profile-img"
               priority
+              className="image"
             />
           </div>
-        </StyledPic>
+        </div>
       </div>
-    </StyledAboutSection>
+    </StyledHeader>
   );
 }

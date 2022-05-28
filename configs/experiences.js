@@ -1,15 +1,14 @@
 const experiences = {
   tabPanels: [
-    { id: 1, name: "Upstatement" },
-    { id: 2, name: "ProHero" },
-    { id: 3, name: "SeoClerk" },
-    { id: 4, name: "Fiverr" },
-    { id: 5, name: "HAcademy" },
-    { id: 6, name: "W3School" },
+    { name: "Upstatement" },
+    { name: "ProHero" },
+    { name: "SeoClerk" },
+    { name: "Fiverr" },
+    { name: "HAcademy" },
+    { name: "W3School" },
   ],
   tabPanelList: [
     {
-      id: 1,
       name: "@Upstatement open source",
       start: "April 2021",
       end: "Present",
@@ -29,7 +28,6 @@ const experiences = {
       ],
     },
     {
-      id: 2,
       name: "@Programming hero teams",
       start: "January",
       end: "March 2021",
@@ -49,7 +47,6 @@ const experiences = {
       ],
     },
     {
-      id: 3,
       name: "@Search engine optimaization",
       start: "October",
       end: "Desember 2020",
@@ -69,7 +66,6 @@ const experiences = {
       ],
     },
     {
-      id: 4,
       name: "@Fiverr (business website)",
       start: "July",
       end: "September 2020",
@@ -85,7 +81,6 @@ const experiences = {
       ],
     },
     {
-      id: 5,
       name: "@Hello academy teams",
       start: "January",
       end: "June 2020",
@@ -105,7 +100,6 @@ const experiences = {
       ],
     },
     {
-      id: 6,
       name: "@W3 school learning platform",
       start: "October",
       end: "Desember 2019",
