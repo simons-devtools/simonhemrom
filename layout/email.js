@@ -20,12 +20,12 @@ const StyledLinkWrapper = styled.div`
   }
 
   a {
-    margin: 20px auto;
+    margin: 30px auto;
     padding: 10px;
     font-family: var(--font-mono);
     font-size: var(--fz-xxs);
     line-height: var(--fz-lg);
-    letter-spacing: 0.1em;
+    letter-spacing: 2px;
     writing-mode: vertical-rl;
 
     &:hover,

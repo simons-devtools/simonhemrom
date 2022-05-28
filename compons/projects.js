@@ -22,11 +22,14 @@ const StyledProjects = styled.div`
       .project-content {
         display: block;
         width: 326px;
-        height: 366px;
+        height: 336px;
         margin-top: 11px;
         padding: 30px 20px;
         background: var(--light-navy);
         border-radius: var(--border-radius);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         .project-icons {
           ${({ theme }) => theme.mixins.flexBetween}
           .folder > svg {
@@ -42,24 +45,28 @@ const StyledProjects = styled.div`
           }
         }
         .project-article {
-          min-height: 180px;
-          margin: 40px 0px 20px 0px;
-          .title {
-            letter-spacing: 2px;
-          }
           .description {
+            line-height: 20px;
             font-size: var(--fz-sm);
           }
         }
         .project-technologies {
           display: flex;
+          margin: 0px;
           li {
-            margin-right: 34px;
+            margin-right: 20px;
+            font-size: var(--fz-xxs);
+            letter-spacing: 1.4px;
           }
         }
         &:hover {
+          color: var(--slate);
           transform: var(--translateY);
           transition: var(--transition);
+          .title {
+            color: var(--green);
+            transition: var(--transition);
+          }
         }
       }
     }
@@ -67,7 +74,27 @@ const StyledProjects = styled.div`
     .project-btn {
       text-align: center;
       a {
-        ${({ theme }) => theme.mixins.smallButton}
+        ${({ theme }) => theme.mixins.bigButton}
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    .projects-container {
+      padding: 0px 0px;
+      .small-heading {
+        font-size: var(--fz-xl);
+      }
+      .small-title {
+        font-size: var(--fz-xs);
+      }
+      .project-wrapper {
+        display: flex;
+        flex-direction: column;
+        .project-content {
+          width: 100%;
+        }
       }
     }
   }
@@ -101,7 +128,7 @@ export default function Projects() {
                     </span>
                   </div>
                   <div className="project-article">
-                    <h4 className="title">{name}</h4>
+                    <h2 className="title">{name}</h2>
                     <p className="description">{description}</p>
                   </div>
                   <ul className="project-technologies">
@@ -121,7 +148,7 @@ export default function Projects() {
             target="_blank"
             rel="noopenner noreferrer"
           >
-            Show More Projects
+            Show More
           </a>
         </div>
       </div>

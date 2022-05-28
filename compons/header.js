@@ -9,7 +9,7 @@ const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
-  min-height: 110vh;
+  min-height: 100vh;
   padding: 0;
 
   @media (max-width: 480px) and (min-height: 700px) {
@@ -22,6 +22,7 @@ const StyledHeroSection = styled.section`
     font-family: var(--font-mono);
     font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
     font-weight: 400;
+    letter-spacing: 2px;
 
     @media (max-width: 480px) {
       margin: 0 0 20px 2px;
@@ -37,6 +38,7 @@ const StyledHeroSection = styled.section`
   p {
     margin: 20px 0 0;
     max-width: 540px;
+    line-height: 26px;
   }
 
   .email-link {

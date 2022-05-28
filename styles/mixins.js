@@ -128,6 +128,7 @@ const mixins = {
     font-size: var(--fz-sm);
     font-family: var (--font-mono);
     line-height: 1;
+    letter-spacing: 1.4px;
     text-decoration: none;
     cursor: pointer;
     transition: var(--transition);

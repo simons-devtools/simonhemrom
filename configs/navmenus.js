@@ -8,7 +8,7 @@ const navmenus = [
     url: "/#experiences-section",
   },
   {
-    name: "Projects",
+    name: "Work",
     url: "/#projects-section",
   },
   {

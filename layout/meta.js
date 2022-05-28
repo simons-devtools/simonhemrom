@@ -14,7 +14,7 @@ export default function Meta({ title, keywords, description }) {
 }
 
 Meta.defaultProps = {
-  title: "Simon Hemrom | Portfolio",
+  title: "Simon Hemrom",
   keywords: "portfolio, resume, biodata",
   description:
     "Latest web developer online resume, biodata, and portfolio single web page",

@@ -153,7 +153,7 @@ const Globalstyles = createGlobalStyle`
 
   .numbered-heading {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     position: relative;
     margin: 10px 0 40px;
     width: 100%;
@@ -170,7 +170,7 @@ const Globalstyles = createGlobalStyle`
       font-family: var(--font-mono);
       font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
       font-weight: 400;
-
+      
       @media (max-width: 480px) {
         margin-bottom: -3px;
         margin-right: 5px;
