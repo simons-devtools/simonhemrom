@@ -67,9 +67,8 @@ export default function Header() {
       designing) exceptional digital experiences. Currently, I’m focused on
       building accessible, human-centered products at
       <a href="https://github.com/simonsinfo" target="_blank" rel="noreferrer">
-        Upstatement
+        Upstatement.
       </a>
-      .
     </p>
   );
   const five = (

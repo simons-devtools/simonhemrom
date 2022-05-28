@@ -56,10 +56,6 @@ const Globalstyles = createGlobalStyle`
     font-size: var(--fz-md);
     line-height: 1.3;
 
-    @media (max-width: 480px) {
-      font-size: var(--fz-lg);
-    }
-
     &.hidden {
       overflow: hidden;
     }

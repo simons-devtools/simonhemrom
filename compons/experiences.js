@@ -4,7 +4,7 @@ import { experiences } from "../configs";
 
 const StyledExperiences = styled.section`
   .experiences-wrapper {
-    padding: 50px 150px;
+    padding: 0px 150px;
     .experiences-content {
       display: flex;
       .tab-panel-items {
@@ -43,6 +43,31 @@ const StyledExperiences = styled.section`
               color: inherit !important;
             }
           }
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 0px 0px;
+      .experiences-content {
+        display: flex;
+        flex-direction: column;
+        .tab-panel-items {
+          height: 100%;
+          display: flex;
+          border-left: none;
+          border-bottom: 2px solid var(--lightest-navy);
+          overflow-x: scroll;
+          overflow-y: hidden;
+          li {
+            &.active {
+              border: none;
+              margin-left: 0px;
+            }
+          }
+        }
+        .tab-panel-content {
+          padding: 15px 0px;
         }
       }
     }

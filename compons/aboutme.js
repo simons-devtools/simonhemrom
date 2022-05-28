@@ -24,7 +24,7 @@ const StyledHeader = styled.section`
 
       .right-content {
         position: relative;
-        z-index: 20;
+        z-index: 10;
         width: 300px;
         height: 300px;
         background: var(--green);
@@ -71,6 +71,28 @@ const StyledHeader = styled.section`
             mix-blend-mode: normal;
             transition: var(--transition);
           }
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 0px 0px;
+      .about-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .left-content {
+          width: 100%;
+          margin: 0px;
+          padding-bottom: 50px;
+          .item {
+            font-size: var(--fz-xs);
+            letter-spacing: 0.5px;
+          }
+        }
+        .right-content {
+          width: 60%;
+          height: 60%;
         }
       }
     }
