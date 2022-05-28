@@ -1,49 +1,132 @@
+import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Icon } from "../configs/icons";
+import { socials } from "../configs";
 
-const StyledFooter = styled.div`
-  padding: 25px 0px;
+const StyledFooter = styled.footer`
+  ${({ theme }) => theme.mixins.flexCenter};
+  flex-direction: column;
+  height: auto;
+  min-height: 70px;
+  padding: 15px;
   text-align: center;
-  font-family: monospace;
-  font-size: var(--fz-xs);
-  color: var(--light-slate);
-  a {
-    span {
-      margin: 0px 10px;
-      svg {
-        width: 15px;
-        height: 15px;
-      }
-    }
-    &:hover {
-      color: var(--green);
-      transition: var(--transition);
-    }
+`;
+
+const StyledSocialLinks = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    width: 100%;
+    max-width: 270px;
+    margin: 0 auto 10px;
+    color: var(--light-slate);
   }
 
-  @media screen and (max-width: 768px) {
-    width: 100%;
+  ul {
+    ${({ theme }) => theme.mixins.flexBetween};
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    a {
+      padding: 10px;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+`;
+
+const StyledCredit = styled.div`
+  color: var(--light-slate);
+  font-family: var(--font-mono);
+  font-size: var(--fz-xxs);
+  line-height: 1;
+  letter-spacing: 2px;
+
+  a {
+    padding: 10px;
+  }
+
+  .github-stats {
+    margin-top: 10px;
+
+    & > span {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 7px;
+    }
+    svg {
+      display: inline-block;
+      margin-right: 5px;
+      width: 14px;
+      height: 14px;
+    }
   }
 `;
 
 export default function Footer() {
+  const [githubInfo, setGitHubInfo] = React.useState({
+    stars: null,
+    forks: null,
+  });
+
+  React.useEffect(() => {
+    if (process.env.NODE_ENV !== "production") {
+      return;
+    }
+    fetch("https://api.github.com/repos/simons-devtools/next-app")
+      .then((response) => response.json())
+      .then((json) => {
+        const { stargazers_count, forks_count } = json;
+        setGitHubInfo({
+          stars: stargazers_count,
+          forks: forks_count,
+        });
+      })
+      .catch((e) => console.error(e));
+  }, []);
+
   return (
     <StyledFooter>
-      <a
-        href="https://www.google.com"
-        target="_blank"
-        rel="noopenner noreferrer"
-      >
-        <div>Designed & Built by Simon Hemrom</div>
-        <div className="github-info">
-          <span>
-            <Icon name="Star" /> 4,784
-          </span>
-          <span>
-            <Icon name="Fork" /> 2,187
-          </span>
-        </div>
-      </a>
+      <StyledSocialLinks>
+        <ul>
+          {socials &&
+            socials.map(({ name, url }, i) => (
+              <li key={i}>
+                <a href={url} aria-label={name}>
+                  <Icon name={name} />
+                </a>
+              </li>
+            ))}
+        </ul>
+      </StyledSocialLinks>
+
+      <StyledCredit tabindex="-1">
+        <a href="https://github.com/simons-devtools/next-app">
+          <div>Designed &amp; Built by Simon Hemrom</div>
+
+          {githubInfo.stars && githubInfo.forks && (
+            <div className="github-stats">
+              <span>
+                <Icon name="Star" />
+                <span>{githubInfo.stars.toLocaleString()}</span>
+              </span>
+              <span>
+                <Icon name="Fork" />
+                <span>{githubInfo.forks.toLocaleString()}</span>
+              </span>
+            </div>
+          )}
+        </a>
+      </StyledCredit>
     </StyledFooter>
   );
 }
+
+Footer.propTypes = {
+  githubInfo: PropTypes.object,
+};

@@ -29,7 +29,7 @@ const StyledContact = styled.section`
   }
 
   @media screen and (max-width: 768px) {
-    padding: 153px 0px;
+    padding: 160px 0px;
     .title {
       font-size: clamp(35px, 5vw, 50px);
     }
