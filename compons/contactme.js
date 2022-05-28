@@ -4,32 +4,35 @@ import styled from "styled-components";
 const StyledContact = styled.section`
   text-align: center;
   padding: 153px 253px;
-
   .overline {
     display: block;
     margin-bottom: 20px;
-    color: var(--green);
     font-family: var(--font-mono);
-    font-size: var(--fz-md);
-    font-weight: 400;
-
+    letter-spacing: 2px;
     &:before {
       bottom: 0;
       font-size: var(--fz-sm);
     }
-
     &:after {
       display: none;
     }
   }
-
   .title {
     font-size: clamp(40px, 5vw, 60px);
   }
-
+  p {
+    line-height: 25px;
+  }
   .email-link {
     margin-top: 50px;
     ${({ theme }) => theme.mixins.bigButton};
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 153px 0px;
+    .title {
+      font-size: clamp(35px, 5vw, 50px);
+    }
   }
 `;
 
