@@ -16,7 +16,7 @@ const StyledHeader = styled.section`
           .item {
             width: 50%;
             margin: 3px 0px;
-            color: var(--slate);
+            font-size: var(--fz-sm);
             display: inline-block;
           }
         }

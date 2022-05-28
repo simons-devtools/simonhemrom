@@ -4,7 +4,7 @@ import { experiences } from "../configs";
 
 const StyledExperiences = styled.section`
   .experiences-wrapper {
-    padding: 0px 150px;
+    padding: 30px 150px;
     .experiences-content {
       display: flex;
       .tab-panel-items {
@@ -39,6 +39,7 @@ const StyledExperiences = styled.section`
           .panel-items {
             ${({ theme }) => theme.mixins.fancyList}
             .item {
+              line-height: 22px;
               font-size: var(--fz-sm);
               color: inherit !important;
             }

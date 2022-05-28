@@ -44,11 +44,9 @@ const StyledProjects = styled.div`
             display: block;
           }
         }
-        .project-article {
-          .description {
-            line-height: 20px;
-            font-size: var(--fz-sm);
-          }
+        .project-article > .description {
+          line-height: 20px;
+          font-size: var(--fz-sm);
         }
         .project-technologies {
           display: flex;
@@ -115,7 +113,7 @@ export default function Projects() {
               ({ id, name, description, website, github, technologies }) => (
                 <a
                   key={id}
-                  href={github}
+                  href={website}
                   target="noopenner noreferrer"
                   className="project-content"
                 >
@@ -123,12 +121,17 @@ export default function Projects() {
                     <span className="folder">
                       <Icon name="Folder"></Icon>
                     </span>
-                    <span className="github">
+                    <a
+                      href={github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="github"
+                    >
                       <Icon name="GitHub"></Icon>
-                    </span>
+                    </a>
                   </div>
                   <div className="project-article">
-                    <h2 className="title">{name}</h2>
+                    <h3 className="title">{name}</h3>
                     <p className="description">{description}</p>
                   </div>
                   <ul className="project-technologies">
