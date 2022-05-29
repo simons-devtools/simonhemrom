@@ -102,14 +102,13 @@ const StyledLinks = styled.div`
     list-style: none;
 
     li {
-      margin: 0 5px;
       position: relative;
       counter-increment: item 1;
       font-size: var(--fz-xs);
       letter-spacing: 1.4px;
 
       a {
-        padding: 10px;
+        margin-right: 20px;
 
         &:before {
           content: "0" counter(item) ".";
@@ -123,9 +122,8 @@ const StyledLinks = styled.div`
   }
 
   .resume-button {
-    ${({ theme }) => theme.mixins.smallButton};
-    margin-left: 15px;
     font-size: var(--fz-xs);
+    ${({ theme }) => theme.mixins.smallButton};
   }
 `;
 

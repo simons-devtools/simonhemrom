@@ -4,19 +4,6 @@ import styled from "styled-components";
 const StyledContact = styled.section`
   text-align: center;
   padding: 153px 253px;
-  .overline {
-    display: block;
-    margin-bottom: 20px;
-    font-family: var(--font-mono);
-    letter-spacing: 2px;
-    &:before {
-      bottom: 0;
-      font-size: var(--fz-sm);
-    }
-    &:after {
-      display: none;
-    }
-  }
   .title {
     font-size: clamp(40px, 5vw, 60px);
   }
@@ -40,7 +27,6 @@ export default function Contact() {
   return (
     <StyledContact id="contact-section">
       <h2 className="numbered-heading overline">What’s Next?</h2>
-
       <h2 className="title">Get In Touch</h2>
 
       <p>

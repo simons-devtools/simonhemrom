@@ -22,10 +22,11 @@ const StyledSocialList = styled.ul`
   }
   li {
     &:last-of-type {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
     a {
-      padding: 10px;
+      margin-bottom: 20px;
+
       &:hover,
       &:focus {
         transform: translateY(-3px);

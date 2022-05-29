@@ -6,9 +6,8 @@ const StyledProjects = styled.section`
   .projects-container {
     .projects-header {
       text-align: center;
-      .small-title {
-        color: var(--green);
-        letter-spacing: 2px;
+      .small-heading {
+        margin: 0;
       }
     }
 
@@ -81,9 +80,6 @@ const StyledProjects = styled.section`
       .small-heading {
         font-size: var(--fz-xl);
       }
-      .small-title {
-        font-size: var(--fz-xs);
-      }
       .project-wrapper {
         display: flex;
         flex-direction: column;
@@ -100,8 +96,8 @@ export default function Projects() {
     <StyledProjects id="projects-section">
       <div className="projects-container">
         <div className="projects-header">
+          <h2 className="numbered-heading overline">View the Archive</h2>
           <h2 className="small-heading">Other Noteworthy Projects</h2>
-          <p className="small-title">View the Archive</p>
         </div>
 
         <div className="project-wrapper">

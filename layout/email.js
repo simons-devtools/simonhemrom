@@ -20,8 +20,7 @@ const StyledLinkWrapper = styled.div`
   }
 
   a {
-    margin: 30px auto;
-    padding: 10px;
+    margin: 40px auto;
     font-family: var(--font-mono);
     font-size: var(--fz-xxs);
     line-height: var(--fz-lg);

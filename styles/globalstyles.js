@@ -199,6 +199,24 @@ const Globalstyles = createGlobalStyle`
     }
   }
 
+  .overline {
+    display: block;
+    margin: 0 0 20px 0;
+    font-family: var(--font-mono);
+    letter-spacing: 2px;
+    &:before {
+      bottom: 0;
+      font-size: var(--fz-sm);
+    }
+    &:after {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      font-size: var(--fz-xs);
+    }
+  }
+
   img,
   svg,
   .gatsby-image-wrapper {
