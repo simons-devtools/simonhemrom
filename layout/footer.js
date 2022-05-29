@@ -109,7 +109,7 @@ export default function Footer() {
         <a href="https://github.com/simons-devtools/next-app">
           <div>Designed &amp; Built by Simon Hemrom</div>
 
-          {githubInfo.stars && githubInfo.forks && (
+          {githubInfo.stars && githubInfo.forks ? (
             <div className="github-stats">
               <span>
                 <Icon name="Star" />
@@ -118,6 +118,17 @@ export default function Footer() {
               <span>
                 <Icon name="Fork" />
                 <span>{githubInfo.forks.toLocaleString()}</span>
+              </span>
+            </div>
+          ) : (
+            <div className="github-stats">
+              <span>
+                <Icon name="Star" />
+                <span>0000</span>
+              </span>
+              <span>
+                <Icon name="Fork" />
+                <span>0000</span>
               </span>
             </div>
           )}
