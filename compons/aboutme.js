@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Fragment } from "react";
 import styled from "styled-components";
 
-const StyledHeader = styled.section`
+const StyledAboutme = styled.section`
   .about-wrapper {
     padding: 0px 50px;
     .about-content {
@@ -125,7 +125,7 @@ export default function Aboutme() {
   ];
 
   return (
-    <StyledHeader id="about-section">
+    <StyledAboutme id="about-section">
       <div className="about-wrapper">
         <h2 className="numbered-heading">About Me</h2>
 
@@ -162,6 +162,6 @@ export default function Aboutme() {
           </div>
         </div>
       </div>
-    </StyledHeader>
+    </StyledAboutme>
   );
 }
