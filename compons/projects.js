@@ -147,9 +147,9 @@ export default function Projects() {
 
         <div className="project-btn">
           <a
-            href="https://github.com/simonsinfo"
+            href="https://github.com/simons-devtools"
             target="_blank"
-            rel="noopenner noreferrer"
+            rel="noreferrer"
           >
             Show More
           </a>

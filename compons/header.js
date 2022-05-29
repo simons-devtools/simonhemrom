@@ -68,7 +68,11 @@ export default function Header() {
       I’m a software developer specializing in building (and occasionally
       designing) exceptional digital experiences. Currently, I’m focused on
       building accessible, human-centered products at
-      <a href="https://github.com/simonsinfo" target="_blank" rel="noreferrer">
+      <a
+        href="https://github.com/simons-devtools"
+        target="_blank"
+        rel="noreferrer"
+      >
         Upstatement.
       </a>
     </p>

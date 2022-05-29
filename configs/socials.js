@@ -17,7 +17,7 @@ const socials = [
   },
   {
     name: "Codepen",
-    url: "https://simonhemrom.netlify.app",
+    url: "https://codepen.io/simonsinfo",
   },
 ];
 

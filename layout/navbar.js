@@ -172,7 +172,7 @@ export default function Navbar({ isHome }) {
   const ResumeLink = (
     <a
       className="resume-button"
-      href="https://github.com/simonsinfo"
+      href="https://drive.google.com/file/d/1KQ4j09aVzNMBI43rl2ueOpMwht8GQZEs/view?usp=sharing"
       target="_blank"
       rel="noopener noreferrer"
     >
