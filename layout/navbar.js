@@ -106,6 +106,7 @@ const StyledLinks = styled.div`
       position: relative;
       counter-increment: item 1;
       font-size: var(--fz-xs);
+      letter-spacing: 1.4px;
 
       a {
         padding: 10px;
