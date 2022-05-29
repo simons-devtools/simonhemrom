@@ -142,14 +142,14 @@ module.exports = {
       role: "Featured Project",
       name: "Merchant Pay (next)",
       image: "/images/merchant-pay.png",
-      website: "https://merchantpay.netlify.app",
+      website: "https://merchant.netlify.app",
       technologies: ["Next.js", "MongoDB", "Node.js", "Heroku", "Express"],
       featureds: [
         {
           icon: "GitHub",
-          root: "https://github.com/simons-devtools/merchant-pay",
+          root: "https://github.com/simons-devtools/merchant",
         },
-        { icon: "External", root: "https://merchantpay.netlify.app" },
+        { icon: "External", root: "https://merchant.netlify.app" },
       ],
       article:
         "Improve your GitHub profile and repository statistics with your top programming language and e-commerce site data visualization. Sort by the shape of their data through your top customers.",
@@ -189,9 +189,9 @@ module.exports = {
   ],
   projects: [
     {
-      name: "Food Recipe Videos (search)",
-      stream: "https://food-recipe-videos.netlify.app",
-      source: "https://github.com/simons-devtools/food-recipe-videos",
+      name: "Food Recipe (search)",
+      stream: "https://food-recipe.netlify.app",
+      source: "https://github.com/simons-devtools/food-recipe",
       technologies: ["React", "Express", "Node.js"],
       description:
         "If you want to make a special kind of food for a restaurant or home but you don't know what you have to do to make it, you can search for that item and find its live videos.",
@@ -205,7 +205,7 @@ module.exports = {
         "You just have to be more discriminating with the help you render toward other people. You just have to be more discriminating with the help you render toward other people. Then this website can work well for them for booking.",
     },
     {
-      name: "Hotel Booking (online)",
+      name: "Hotel Booking (realstate)",
       stream: "https://hotel-booking.netlify.app",
       source: "https://github.com/simons-devtools/hotel-booking",
       technologies: ["React", "Express", "Node.js"],
@@ -213,15 +213,15 @@ module.exports = {
         "You have left your city for work or travel to another city. You may need to rent a house to stay but of course you can't decide how to manage it. Then by logging in to this website you will be able to book the room as per your requirement",
     },
     {
-      name: "Team Network (care-center)",
-      stream: "https://team-network.netlify.app",
-      source: "https://github.com/simons-devtools/team-network",
+      name: "Volunteer Network (team)",
+      stream: "https://volunteer-network.netlify.app",
+      source: "https://github.com/simons-devtools/volunteer-network",
       technologies: ["React", "Express", "Node.js"],
       description:
         "If you want to manage some people for a party or event then you can easily manage the people as per your need by logging in to this web page.",
     },
     {
-      name: "React Deshboard (app-cms)",
+      name: "React Deshboard (cms)",
       stream: "https://react-dashboard.netlify.app",
       source: "https://github.com/simons-devtools/react-dashboard",
       technologies: ["React", "Express", "Node.js"],
@@ -229,7 +229,7 @@ module.exports = {
         "Imagine that you have a personal website and you can't manage where and how. In that case this dashboard can give you some great features. Such as users, products, create, update, delete.",
     },
     {
-      name: "Upcomming Feature (chat-bot)",
+      name: "Upcomming Feature (chatbot)",
       stream: "https://online-chatbot.netlify.app",
       source: "https://github.com/simons-devtools/online-chatbot",
       technologies: ["React", "Express", "Node.js"],

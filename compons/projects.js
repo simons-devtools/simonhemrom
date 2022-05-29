@@ -133,9 +133,7 @@ export default function Projects() {
                   </div>
                   <ul className="project-technologies">
                     {technologies &&
-                      technologies.map(({ tech }, i) => (
-                        <li key={i}>{tech}</li>
-                      ))}
+                      technologies.map((tech, i) => <li key={i}>{tech}</li>)}
                   </ul>
                 </a>
               )
