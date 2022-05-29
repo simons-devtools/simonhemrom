@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { socials } from "../configs";
+import { socialLinks } from "../config";
 import { Side } from "../layout";
-import { Icon } from "../configs/icons";
+import { Icon } from "../icons";
 
 const StyledSocialList = styled.ul`
   display: flex;
@@ -42,8 +42,8 @@ export default function Social({ isHome }) {
   return (
     <Side isHome={isHome} orientation="left">
       <StyledSocialList>
-        {socials &&
-          socials.map(({ url, name }, i) => (
+        {socialLinks &&
+          socialLinks.map(({ url, name }, i) => (
             <li key={i}>
               <a href={url} aria-label={name} target="_blank" rel="noreferrer">
                 <Icon name={name} />

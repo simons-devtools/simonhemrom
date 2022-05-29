@@ -3,11 +3,11 @@ import Link from "next/link";
 import PropTypes from "prop-types";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import styled, { css } from "styled-components";
-import { navmenus } from "../configs";
+import { navbarLinks } from "../config";
 import { loaderDelay } from "../src/utils";
 import { useScrollDirection, usePrefersReducedMotion } from "../src/hooks";
 import { Menu } from "../layout";
-import { IconLogo } from "../configs/icons";
+import { IconLogo } from "../icons";
 import { useRouter } from "next/router";
 
 const StyledHeader = styled.header`
@@ -192,8 +192,8 @@ export default function Navbar({ isHome }) {
 
             <StyledLinks>
               <ol>
-                {navmenus &&
-                  navmenus.map(({ url, name }, i) => (
+                {navbarLinks &&
+                  navbarLinks.map(({ url, name }, i) => (
                     <li key={i}>
                       <a href={url}>{name}</a>
                     </li>
@@ -218,8 +218,8 @@ export default function Navbar({ isHome }) {
               <ol>
                 <TransitionGroup component={null}>
                   {isMounted &&
-                    navmenus &&
-                    navmenus.map(({ url, name }, i) => (
+                    navbarLinks &&
+                    navbarLinks.map(({ url, name }, i) => (
                       <CSSTransition
                         key={i}
                         classNames={fadeDownClass}
@@ -244,7 +244,7 @@ export default function Navbar({ isHome }) {
                     <div
                       style={{
                         transitionDelay: `${
-                          isHome ? navmenus.length * 100 : 0
+                          isHome ? navbarLinks.length * 100 : 0
                         }ms`,
                       }}
                     >

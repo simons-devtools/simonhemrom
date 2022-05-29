@@ -1,4 +1,4 @@
-import { profile } from "../configs";
+import { profile } from "../config";
 import styled from "styled-components";
 
 const StyledContact = styled.section`

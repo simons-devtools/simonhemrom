@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import styled from "styled-components";
-import { profile } from "../configs";
+import { profile } from "../config";
 import { navDelay, loaderDelay } from "../src/utils";
 import { usePrefersReducedMotion } from "../src/hooks";
 
@@ -68,11 +68,7 @@ export default function Header() {
       I’m a software developer specializing in building (and occasionally
       designing) exceptional digital experiences. Currently, I’m focused on
       building accessible, human-centered products at
-      <a
-        href="https://github.com/simons-devtools"
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a href={profile.branch} target="_blank" rel="noreferrer">
         Upstatement.
       </a>
     </p>

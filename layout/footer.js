@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { Icon } from "../configs/icons";
-import { socials } from "../configs";
+import { Icon } from "../icons";
+import { socialLinks } from "../config";
 
 const StyledFooter = styled.footer`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -94,8 +94,8 @@ export default function Footer() {
     <StyledFooter>
       <StyledSocialLinks>
         <ul>
-          {socials &&
-            socials.map(({ name, url }, i) => (
+          {socialLinks &&
+            socialLinks.map(({ name, url }, i) => (
               <li key={i}>
                 <a href={url} aria-label={name}>
                   <Icon name={name} />

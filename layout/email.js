@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { profile } from "../configs";
+import { profile } from "../config";
 import { Side } from "../layout";
 
 const StyledLinkWrapper = styled.div`

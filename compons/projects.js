@@ -1,12 +1,9 @@
-import { projects } from "../configs";
-import { Icon } from "../configs/icons";
+import { Icon } from "../icons";
+import { profile, projects } from "../config";
 import styled from "styled-components";
 
-const StyledProjects = styled.div`
-  width: 1000px;
-  margin: 0px auto;
+const StyledProjects = styled.section`
   .projects-container {
-    padding: 50px 0px;
     .projects-header {
       text-align: center;
       .small-title {
@@ -100,7 +97,7 @@ const StyledProjects = styled.div`
 
 export default function Projects() {
   return (
-    <StyledProjects>
+    <StyledProjects id="projects-section">
       <div className="projects-container">
         <div className="projects-header">
           <h2 className="small-heading">Other Noteworthy Projects</h2>
@@ -110,11 +107,11 @@ export default function Projects() {
         <div className="project-wrapper">
           {projects &&
             projects.map(
-              ({ id, name, description, website, github, technologies }) => (
+              ({ name, stream, source, description, technologies }, i) => (
                 <a
-                  key={id}
-                  href={website}
-                  target="noopenner noreferrer"
+                  key={i}
+                  href={stream}
+                  target="noreferrer"
                   className="project-content"
                 >
                   <div className="project-icons">
@@ -122,7 +119,7 @@ export default function Projects() {
                       <Icon name="Folder"></Icon>
                     </span>
                     <a
-                      href={github}
+                      href={source}
                       target="_blank"
                       rel="noreferrer"
                       className="github"
@@ -136,8 +133,8 @@ export default function Projects() {
                   </div>
                   <ul className="project-technologies">
                     {technologies &&
-                      technologies.map(({ id, tech }) => (
-                        <li key={id}>{tech}</li>
+                      technologies.map(({ tech }, i) => (
+                        <li key={i}>{tech}</li>
                       ))}
                   </ul>
                 </a>
@@ -146,11 +143,7 @@ export default function Projects() {
         </div>
 
         <div className="project-btn">
-          <a
-            href="https://github.com/simons-devtools"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href={profile.branch} target="_blank" rel="noreferrer">
             Show More
           </a>
         </div>

@@ -1,7 +1,23 @@
 module.exports = {
+  srConfig: (delay = 200, viewFactor = 0.25) => ({
+    origin: "bottom",
+    distance: "20px",
+    duration: 500,
+    delay,
+    rotate: { x: 0, y: 0, z: 0 },
+    opacity: 0,
+    scale: 1,
+    easing: "cubic-bezier(0.645, 0.045, 0.355, 1)",
+    mobile: true,
+    reset: false,
+    useDelay: "always",
+    viewFactor,
+    viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
+  }),
   profile: {
     email: "simonhemrom@hotmail",
     website: "https://simonhemrom.netlify.app",
+    branch: "https://github.com/simons-devtools",
     source: "https://github.com/simons-devtools/simonhemrom",
     resume:
       "https://drive.google.com/file/d/1KQ4j09aVzNMBI43rl2ueOpMwht8GQZEs/view?usp=sharing",
@@ -173,7 +189,7 @@ module.exports = {
   ],
   projects: [
     {
-      headline: "Food Recipe Videos (search)",
+      name: "Food Recipe Videos (search)",
       stream: "https://food-recipe-videos.netlify.app",
       source: "https://github.com/simons-devtools/food-recipe-videos",
       technologies: ["React", "Express", "Node.js"],
@@ -181,7 +197,7 @@ module.exports = {
         "If you want to make a special kind of food for a restaurant or home but you don't know what you have to do to make it, you can search for that item and find its live videos.",
     },
     {
-      headline: "Tourism Agency (travels)",
+      name: "Tourism Agency (travels)",
       stream: "https://tourism-agency.netlify.app",
       source: "https://github.com/simons-devtools/tourism-agency",
       technologies: ["React", "Express", "Node.js"],
@@ -189,7 +205,7 @@ module.exports = {
         "You just have to be more discriminating with the help you render toward other people. You just have to be more discriminating with the help you render toward other people. Then this website can work well for them for booking.",
     },
     {
-      headline: "Hotel Booking (online)",
+      name: "Hotel Booking (online)",
       stream: "https://hotel-booking.netlify.app",
       source: "https://github.com/simons-devtools/hotel-booking",
       technologies: ["React", "Express", "Node.js"],
@@ -197,7 +213,7 @@ module.exports = {
         "You have left your city for work or travel to another city. You may need to rent a house to stay but of course you can't decide how to manage it. Then by logging in to this website you will be able to book the room as per your requirement",
     },
     {
-      headline: "Team Network (care-center)",
+      name: "Team Network (care-center)",
       stream: "https://team-network.netlify.app",
       source: "https://github.com/simons-devtools/team-network",
       technologies: ["React", "Express", "Node.js"],
@@ -205,7 +221,7 @@ module.exports = {
         "If you want to manage some people for a party or event then you can easily manage the people as per your need by logging in to this web page.",
     },
     {
-      headline: "React Deshboard (app-cms)",
+      name: "React Deshboard (app-cms)",
       stream: "https://react-dashboard.netlify.app",
       source: "https://github.com/simons-devtools/react-dashboard",
       technologies: ["React", "Express", "Node.js"],
@@ -213,7 +229,7 @@ module.exports = {
         "Imagine that you have a personal website and you can't manage where and how. In that case this dashboard can give you some great features. Such as users, products, create, update, delete.",
     },
     {
-      headline: "Upcomming Feature (chat-bot)",
+      name: "Upcomming Feature (chat-bot)",
       stream: "https://online-chatbot.netlify.app",
       source: "https://github.com/simons-devtools/online-chatbot",
       technologies: ["React", "Express", "Node.js"],

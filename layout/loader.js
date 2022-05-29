@@ -2,7 +2,7 @@ import anime from "animejs";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
-import { IconLoader } from "../configs/icons";
+import { IconLoader } from "../icons";
 import React, { useState, useEffect } from "react";
 
 const StyledLoader = styled.div`

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
-import { navmenus } from "../configs";
+import { navbarLinks } from "../config";
 import { KEY_CODES } from "../src/utils";
 import { useOnClickOutside } from "../src/hooks";
 
@@ -263,9 +263,9 @@ export default function Menu() {
           tabIndex={menuOpen ? 1 : -1}
         >
           <nav ref={navRef}>
-            {navmenus && (
+            {navbarLinks && (
               <ol>
-                {navmenus.map(({ url, name }, i) => (
+                {navbarLinks.map(({ url, name }, i) => (
                   <li key={i}>
                     <a href={url} onClick={() => setMenuOpen(false)}>
                       {name}

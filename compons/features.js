@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { features } from "../configs";
+import { Icon } from "../icons";
+import { features } from "../config";
 import styled from "styled-components";
-import { Icon } from "../configs/icons";
 
 const StyledFeatures = styled.div`
   display: flex;
@@ -78,9 +78,8 @@ const StyledFeatures = styled.div`
         display: flex;
         justify-content: ${(props) => props.length !== 1 && "flex-end"};
         li {
-          color: inherit !important;
-          font-size: var(--fz-xxs);
           letter-spacing: 1.4px;
+          font-size: var(--fz-xxs);
           margin: ${(props) =>
             props.length === 1 ? "10px 20px 10px 0px" : "10px 0px 10px 20px"};
         }
@@ -155,12 +154,15 @@ const StyledFeatures = styled.div`
 
 export default function Features() {
   return (
-    <section id="projects-section">
+    <section id="features-section">
       <h2 className="numbered-heading">Featured Projects</h2>
 
       {features &&
         features.map(
-          ({ role, name, links, image, article, website, technologies }, i) => (
+          (
+            { role, name, image, website, article, featureds, technologies },
+            i
+          ) => (
             <StyledFeatures key={i} length={i}>
               <div className="feature-image">
                 <a href={website} target="_blank" rel="noopenner noreferrer">
@@ -182,7 +184,7 @@ export default function Features() {
                     <a
                       href={website}
                       target="_blank"
-                      rel="noopenner noreferrer"
+                      rel="noreferrer"
                       className="featured-two"
                     >
                       {name}
@@ -191,19 +193,13 @@ export default function Features() {
                   </div>
                   <ul className="theme-technologies">
                     {technologies &&
-                      technologies.map(({ id, tech }) => (
-                        <li key={id}>{tech}</li>
-                      ))}
+                      technologies.map((tech, i) => <li key={i}>{tech}</li>)}
                   </ul>
                   <ul className="theme-source">
-                    {links &&
-                      links.map(({ id, route, icon }) => (
-                        <li key={id}>
-                          <a
-                            href={route}
-                            target="_blank"
-                            rel="noopenner noreferrer"
-                          >
+                    {featureds &&
+                      featureds.map(({ icon, root }, i) => (
+                        <li key={i}>
+                          <a href={root} target="_blank" rel="noreferrer">
                             <Icon name={icon} />
                           </a>
                         </li>

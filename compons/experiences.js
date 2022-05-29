@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { experiences } from "../configs";
+import { experiences } from "../config";
 
 const StyledExperiences = styled.section`
   .experiences-wrapper {
-    padding: 30px 150px;
+    padding: 50px 150px;
     .experiences-content {
       display: flex;
       .tab-panel-items {
@@ -76,7 +76,7 @@ const StyledExperiences = styled.section`
 `;
 
 export default function Experiences() {
-  const { tabPanels, tabPanelList } = experiences;
+  const { tabPanelItems, tabPanelContents } = experiences;
   const [isActive, setIsActive] = React.useState(0);
 
   return (
@@ -85,21 +85,21 @@ export default function Experiences() {
         <h2 className="numbered-heading">Where I&apos;ve Worked</h2>
         <div className="experiences-content">
           <ul className="tab-panel-items">
-            {tabPanels &&
-              tabPanels.map(({ id, name }, i) => (
+            {tabPanelItems &&
+              tabPanelItems.map((item, i) => (
                 <li
                   key={i}
                   className={`${i === isActive ? "active" : ""}`}
                   onClick={() => setIsActive(i)}
                 >
-                  {name}
+                  {item}
                 </li>
               ))}
           </ul>
 
           <div className="tab-panel-content">
-            {tabPanelList &&
-              tabPanelList.map(({ id, name, start, end, works }, i) =>
+            {tabPanelContents &&
+              tabPanelContents.map(({ name, start, end, works }, i) =>
                 isActive === i ? (
                   <div className="panel-detail" key={i}>
                     <div className="panel-description">
@@ -112,9 +112,9 @@ export default function Experiences() {
                     </div>
                     <ul className="panel-items">
                       {works &&
-                        works.map(({ list }, i) => (
+                        works.map((work, i) => (
                           <li key={i} className="item">
-                            {list}
+                            {work}
                           </li>
                         ))}
                     </ul>
