@@ -20,7 +20,7 @@ const StyledFeatures = styled.div`
       content: "";
       width: 100%;
       height: 100%;
-      background: var(--navy-shadow);
+      background: var(--green-tint);
       border-radius: var(--border-radius);
     }
     a,
@@ -110,6 +110,9 @@ const StyledFeatures = styled.div`
     .feature-image {
       width: 100%;
       height: 100%;
+      &::after {
+        background: var(--navy-shadow);
+      }
     }
     .feature-content {
       position: absolute;
