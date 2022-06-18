@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
+import React from "react";
 import PropTypes from "prop-types";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import styled, { css } from "styled-components";
 import { navbarLinks } from "../config";
 import { loaderDelay } from "../src/utils";
-import { useScrollDirection, usePrefersReducedMotion } from "../src/hooks";
 import { Menu } from "../layout";
 import { IconLogo } from "../icons";
 import { useRouter } from "next/router";
+import styled, { css } from "styled-components";
+import { useScrollDirection, usePrefersReducedMotion } from "../src/hooks";
 
 const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexBetween};
@@ -104,11 +103,11 @@ const StyledLinks = styled.div`
     li {
       position: relative;
       counter-increment: item 1;
-      font-size: var(--fz-xs);
       letter-spacing: 1.4px;
 
       a {
         margin-right: 20px;
+        font-size: var(--fz-xxs);
 
         &:before {
           content: "0" counter(item) ".";
@@ -122,15 +121,14 @@ const StyledLinks = styled.div`
   }
 
   .resume-button {
-    font-size: var(--fz-xs);
     ${({ theme }) => theme.mixins.smallButton};
   }
 `;
 
 export default function Navbar({ isHome }) {
-  const [isMounted, setIsMounted] = useState(!isHome);
+  const [isMounted, setIsMounted] = React.useState(!isHome);
   const scrollDirection = useScrollDirection("down");
-  const [scrolledToTop, setScrolledToTop] = useState(true);
+  const [scrolledToTop, setScrolledToTop] = React.useState(true);
   const prefersReducedMotion = usePrefersReducedMotion();
   const { pathname } = useRouter();
 
@@ -138,7 +136,7 @@ export default function Navbar({ isHome }) {
     setScrolledToTop(window.pageYOffset < 50);
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (prefersReducedMotion) {
       return;
     }

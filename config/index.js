@@ -15,7 +15,7 @@ module.exports = {
     viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
   }),
   profile: {
-    email: "simonhemrom@hotmail",
+    email: "simonhemrom@hotmail.com",
     website: "https://simonhemrom.netlify.app",
     branch: "https://github.com/simons-devtools",
     source: "https://github.com/simons-devtools/simonhemrom",
@@ -51,7 +51,7 @@ module.exports = {
     },
     {
       name: "Instagram",
-      url: "https://www.instagram.com/simonsinfoo",
+      url: "https://instagram.com/simonsinfoo",
     },
     {
       name: "Twitter",
@@ -59,7 +59,7 @@ module.exports = {
     },
     {
       name: "Linkedin",
-      url: "https://www.linkedin.com/in/simonsinfoo",
+      url: "https://linkedin.com/in/simonsinfoo",
     },
     {
       name: "Codepen",
@@ -140,16 +140,16 @@ module.exports = {
   features: [
     {
       role: "Featured Project",
-      name: "Merchant Pay (next)",
-      image: "/images/merchant-pay.png",
-      website: "https://merchant.netlify.app",
-      technologies: ["Next.js", "MongoDB", "Node.js", "Heroku", "Express"],
+      name: "Dandaz eCom (next)",
+      image: "/images/dandaz-ecom.png",
+      website: "https://dandaz.vercel.app",
+      technologies: ["Next.js", "MongoDB", "Node.js", "Vercel", "Express"],
       featureds: [
         {
           icon: "GitHub",
-          root: "https://github.com/simons-devtools/merchant",
+          root: "https://github.com/simons-devtools/dandaz-ecom",
         },
-        { icon: "External", root: "https://merchant.netlify.app" },
+        { icon: "External", root: "https://dandaz.vercel.app" },
       ],
       article:
         "Improve your GitHub profile and repository statistics with your top programming language and e-commerce site data visualization. Sort by the shape of their data through your top customers.",
@@ -158,14 +158,14 @@ module.exports = {
       role: "Featured Project",
       name: "Child Care (react)",
       image: "/images/child-care.png",
-      website: "https://childcare.netlify.app",
-      technologies: ["React.js", "MongoDB", "Node.js", "Netlify", "Express"],
+      website: "https://childcare.herokuapp.com",
+      technologies: ["React.js", "MongoDB", "Node.js", "Heroku", "Express"],
       featureds: [
         {
           icon: "GitHub",
           root: "https://github.com/simons-devtools/child-care",
         },
-        { icon: "External", root: "https://childcare.netlify.app" },
+        { icon: "External", root: "https://childcare.herokuapp.com" },
       ],
       article:
         "Improve your GitHub profile and repository statistics with your top programming language and e-commerce site data visualization. Sort by the shape of their data through your top customers.",
@@ -190,7 +190,7 @@ module.exports = {
   projects: [
     {
       name: "Food Recipe (search)",
-      stream: "https://food-recipe.netlify.app",
+      stream: "https://simons-food-recipe.netlify.app",
       source: "https://github.com/simons-devtools/food-recipe",
       technologies: ["React", "Express", "Node.js"],
       description:
@@ -198,7 +198,7 @@ module.exports = {
     },
     {
       name: "Tourism Agency (travels)",
-      stream: "https://tourism-agency.netlify.app",
+      stream: "https://simons-tourism-agency.netlify.app",
       source: "https://github.com/simons-devtools/tourism-agency",
       technologies: ["React", "Express", "Node.js"],
       description:
@@ -206,7 +206,7 @@ module.exports = {
     },
     {
       name: "Hotel Booking (realstate)",
-      stream: "https://hotel-booking.netlify.app",
+      stream: "https://simons-hotel-booking.netlify.app",
       source: "https://github.com/simons-devtools/hotel-booking",
       technologies: ["React", "Express", "Node.js"],
       description:
@@ -214,7 +214,7 @@ module.exports = {
     },
     {
       name: "Volunteer Network (team)",
-      stream: "https://volunteer-network.netlify.app",
+      stream: "https://simons-volunteer-network.netlify.app",
       source: "https://github.com/simons-devtools/volunteer-network",
       technologies: ["React", "Express", "Node.js"],
       description:
@@ -222,7 +222,7 @@ module.exports = {
     },
     {
       name: "React Deshboard (cms)",
-      stream: "https://react-dashboard.netlify.app",
+      stream: "https://simons-react-dashboard.netlify.app",
       source: "https://github.com/simons-devtools/react-dashboard",
       technologies: ["React", "Express", "Node.js"],
       description:
@@ -230,7 +230,7 @@ module.exports = {
     },
     {
       name: "Upcomming Feature (chatbot)",
-      stream: "https://online-chatbot.netlify.app",
+      stream: "https://simons-online-chatbot.netlify.app",
       source: "https://github.com/simons-devtools/online-chatbot",
       technologies: ["React", "Express", "Node.js"],
       description:

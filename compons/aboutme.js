@@ -85,7 +85,7 @@ const StyledAboutme = styled.section`
           width: 100%;
           margin: 0px;
           padding-bottom: 50px;
-          .item {
+          .list-items > .item {
             font-size: var(--fz-xs);
             letter-spacing: 0.5px;
           }
@@ -112,7 +112,7 @@ export default function Aboutme() {
       skills: [
         "html5, css3, sass, es6, jsx",
         "React and Native, Gatsby, Next",
-        "GitHub, GitLab, Bitbucket",
+        "Tools: GitHub, BitBucket, GitLab",
         "Express.js, Node.js, MongoDB",
         "Netlify, Heroku, Vercel, WP",
         "React Bootstrap, Material UI",

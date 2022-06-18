@@ -1,6 +1,7 @@
+import React from "react";
 import { Icon } from "../icons";
-import { profile, projects } from "../config";
 import styled from "styled-components";
+import { profile, projects } from "../config";
 
 const StyledProjects = styled.section`
   .projects-container {
@@ -16,7 +17,6 @@ const StyledProjects = styled.section`
       ${({ theme }) => theme.mixins.flexBetween}
       flex-wrap: wrap;
       .project-content {
-        display: block;
         width: 326px;
         height: 336px;
         margin-top: 11px;
@@ -40,9 +40,24 @@ const StyledProjects = styled.section`
             display: block;
           }
         }
-        .project-article > .description {
-          line-height: 20px;
-          font-size: var(--fz-sm);
+        .project-article {
+          a {
+            margin-bottom: 10px;
+            font-size: var(--fz-lg);
+            color: var(--lightest-slate);
+            &:hover,
+            &:focus {
+              color: var(--green);
+              transition: var(--transition);
+            }
+            &.inline-link {
+              ${({ theme }) => theme.mixins.inlineLink};
+            }
+          }
+          p {
+            line-height: 20px;
+            font-size: var(--fz-sm);
+          }
         }
         .project-technologies {
           display: flex;
@@ -104,12 +119,7 @@ export default function Projects() {
           {projects &&
             projects.map(
               ({ name, stream, source, description, technologies }, i) => (
-                <a
-                  key={i}
-                  href={stream}
-                  target="noreferrer"
-                  className="project-content"
-                >
+                <div key={i} className="project-content">
                   <div className="project-icons">
                     <span className="folder">
                       <Icon name="Folder"></Icon>
@@ -124,14 +134,16 @@ export default function Projects() {
                     </a>
                   </div>
                   <div className="project-article">
-                    <h3 className="title">{name}</h3>
+                    <a href={stream} target="_blank" rel="noreferrer">
+                      {name}
+                    </a>
                     <p className="description">{description}</p>
                   </div>
                   <ul className="project-technologies">
                     {technologies &&
                       technologies.map((tech, i) => <li key={i}>{tech}</li>)}
                   </ul>
-                </a>
+                </div>
               )
             )}
         </div>

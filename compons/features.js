@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import { Icon } from "../icons";
 import { features } from "../config";
@@ -60,10 +61,13 @@ const StyledFeatures = styled.div`
           margin-bottom: 15px;
           font-size: var(--fz-xxl);
           color: var(--lightest-slate);
-          transition: var(--transition);
-          &:hover {
-            cursor: pointer;
+          &:hover,
+          &:focus {
             color: var(--green);
+            transition: var(--transition);
+          }
+          &.inline-link {
+            ${({ theme }) => theme.mixins.inlineLink};
           }
         }
         .featured-three {
@@ -110,7 +114,8 @@ const StyledFeatures = styled.div`
       width: 100%;
       height: 100%;
       &::after {
-        background: var(--navy-shadow);
+        background: var(--light-navy);
+        /* background: var(--navy-shadow); */
       }
     }
     .feature-content {
@@ -165,7 +170,7 @@ export default function Features() {
           ) => (
             <StyledFeatures key={i} length={i}>
               <div className="feature-image">
-                <a href={website} target="_blank" rel="noopenner noreferrer">
+                <a href={website} target="_blank" rel="noreferrer">
                   <Image
                     src={image}
                     width={565}
