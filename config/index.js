@@ -142,14 +142,14 @@ module.exports = {
       role: "Featured Project",
       name: "Dandaz eCom (next)",
       image: "/images/dandaz-ecom.png",
-      website: "https://dandaz.vercel.app",
-      technologies: ["Next.js", "MongoDB", "Node.js", "Vercel", "Express"],
+      website: "https://dandaz.netlify.app",
+      technologies: ["Next.js", "MongoDB", "Node.js", "Netlify", "Express"],
       featureds: [
         {
           icon: "GitHub",
-          root: "https://github.com/simons-devtools/dandaz-ecom",
+          root: "https://github.com/simons-devtools/merchant-with-next",
         },
-        { icon: "External", root: "https://dandaz.vercel.app" },
+        { icon: "External", root: "https://dandaz.netlify.app" },
       ],
       article:
         "Improve your GitHub profile and repository statistics with your top programming language and e-commerce site data visualization. Sort by the shape of their data through your top customers.",
