@@ -20,7 +20,7 @@ module.exports = {
     branch: "https://github.com/simons-devtools",
     source: "https://github.com/simons-devtools/simonhemrom",
     resume:
-      "https://drive.google.com/file/d/1KQ4j09aVzNMBI43rl2ueOpMwht8GQZEs/view?usp=sharing",
+      "https://drive.google.com/file/d/1ZaNbtRcwPD1AdaS-_VB4oUm9bvNMx9iY/view?usp=sharing",
   },
   navbarLinks: [
     {
@@ -142,14 +142,14 @@ module.exports = {
       role: "Featured Project",
       name: "Dandaz eCom (next)",
       image: "/images/dandaz-ecom.png",
-      website: "https://dandaz.netlify.app",
-      technologies: ["Next.js", "MongoDB", "Node.js", "Netlify", "Express"],
+      website: "https://dandaz.vercel.app",
+      technologies: ["Next.js", "MongoDB", "Node.js", "Vercel", "Express"],
       featureds: [
         {
           icon: "GitHub",
-          root: "https://github.com/simons-devtools/merchant-with-next",
+          root: "https://github.com/simons-devtools/dandaz-ecom",
         },
-        { icon: "External", root: "https://dandaz.netlify.app" },
+        { icon: "External", root: "https://dandaz.vercel.app" },
       ],
       article:
         "Improve your GitHub profile and repository statistics with your top programming language and e-commerce site data visualization. Sort by the shape of their data through your top customers.",
@@ -158,14 +158,14 @@ module.exports = {
       role: "Featured Project",
       name: "Child Care (react)",
       image: "/images/child-care.png",
-      website: "https://childcare.herokuapp.com",
+      website: "https://simons-childcare.herokuapp.com",
       technologies: ["React.js", "MongoDB", "Node.js", "Heroku", "Express"],
       featureds: [
         {
           icon: "GitHub",
           root: "https://github.com/simons-devtools/child-care",
         },
-        { icon: "External", root: "https://childcare.herokuapp.com" },
+        { icon: "External", root: "https://simons-childcare.herokuapp.com" },
       ],
       article:
         "Improve your GitHub profile and repository statistics with your top programming language and e-commerce site data visualization. Sort by the shape of their data through your top customers.",
@@ -174,14 +174,14 @@ module.exports = {
       role: "Featured Project",
       name: "Service Info (react)",
       image: "/images/service-info.png",
-      website: "https://serviceinfo.netlify.app",
-      technologies: ["React.js", "MongoDB", "Node.js", "Netlify", "Express"],
+      website: "https://simons-serviceinfo.herokuapp.com",
+      technologies: ["React.js", "MongoDB", "Node.js", "Heroku", "Express"],
       featureds: [
         {
           icon: "GitHub",
           root: "https://github.com/simons-devtools/service-info",
         },
-        { icon: "External", root: "https://serviceinfo.netlify.app" },
+        { icon: "External", root: "https://simons-serviceinfo.herokuapp.com" },
       ],
       article:
         "Improve your GitHub profile and repository statistics with your top programming language and e-commerce site data visualization. Sort by the shape of their data through your top customers",

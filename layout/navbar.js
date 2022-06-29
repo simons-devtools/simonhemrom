@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { navbarLinks } from "../config";
+import { profile, navbarLinks } from "../config";
 import { loaderDelay } from "../src/utils";
 import { Menu } from "../layout";
 import { IconLogo } from "../icons";
@@ -167,10 +167,10 @@ export default function Navbar({ isHome }) {
 
   const ResumeLink = (
     <a
-      className="resume-button"
-      href="https://drive.google.com/file/d/1KQ4j09aVzNMBI43rl2ueOpMwht8GQZEs/view?usp=sharing"
+      href={profile.resume}
       target="_blank"
-      rel="noopener noreferrer"
+      rel="noreferrer"
+      className="resume-button"
     >
       Resume
     </a>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
-import { navbarLinks } from "../config";
+import { navbarLinks, profile } from "../config";
 import { KEY_CODES } from "../src/utils";
 import { useOnClickOutside } from "../src/hooks";
 
@@ -275,7 +275,12 @@ export default function Menu() {
               </ol>
             )}
 
-            <a href="https://github.com/simonsinfo" className="resume-link">
+            <a
+              href={profile.resume}
+              target="_blank"
+              rel="noreferrer"
+              className="resume-link"
+            >
               Resume
             </a>
           </nav>
